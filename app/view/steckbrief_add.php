@@ -3,9 +3,20 @@
     //Hole den Fehlermeldung Code
     require_once('error.php');
 ?>
-<form action="validate_steckbrief_add" method="POST" enctype="multipart/form-data">
+<form action="validate_steckbrief_add" method="post" enctype="multipart/form-data">
     <p class="p_form">Bild von dir</p>
-    <input class="forms_file" type="file" accept=".jpg, .jpeg, .png" name="bild"/>
+    <div>
+        <input type="file" id="fileInput" name="bild" accept=".jpg, .jpeg, .png" />
+        <canvas id="imageCanvas" width="200" height="200" style="display:none; border:0px solid #000000;"></canvas>
+    </div>
+    <div id="preview">
+        <p id="preview_text" style="display:none">Vorschau:</p>
+    </div>
+    <input id="srcimg" type="hidden" name="srcbild" value=""/>
+
+    <!--Scripts für die Vorschau einbinden-->
+    <script src="./js/ImageCropperTest.js"></script>
+    <script src="./js/ImageCropper.js"></script>
 <?php
     $steckbriefkategorien = getCharacteristicsCategoryByObligation();
     //Für alle Steckbriefkategorien die obligatorisch sind

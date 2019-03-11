@@ -235,7 +235,7 @@
                     if($overlapping == 0){
                         $gaptobefore += 10;
                     }
-                    /*else{
+                    else{
                         //hol die Aktivität mit der grössten Endzeit vor der aktuellen Aktivität
                         $lastactivity = getLastEndzeit($day, $activity);
                         //Wenn eine solche Aktivität existiert
@@ -248,7 +248,7 @@
                                 }
                             }
                         }
-                    }*/
+                    }
                     $overlapping++;
                 }
                 //Setze alle physikalischen Werte für die Aktivitäten
@@ -491,7 +491,7 @@
     }
 
     //Methode für die Grösste Endzeit eines Tages zu bekommen
-    //$day: ein Tag Array gefüllt mir Aktivitäten
+    //$day: ein Tag Array gefüllt mit Aktivitäten
     function getBiggestEndHeight($day){
         global $daylisttime;
         $biggestendnumber = 0;

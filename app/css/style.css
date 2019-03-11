@@ -51,13 +51,19 @@ h2{
         background: linear-gradient(to bottom, transparent 0%, transparent 23%, #584125 23%, #584125 29%, transparent 29%, transparent 52%, #584125 52%, #584125 58%, transparent 58%, transparent 81%, #584125 81%, #584125 87%, transparent 87%);
     }
 }
-  #navigation_button.clicked {
+#navigation_button.clicked {
     background: -webkit-linear-gradient(135deg, transparent 0%, transparent 46%, #584125 46%, #584125 52%, transparent 52%, transparent 100%), -webkit-linear-gradient(45deg, transparent 0%, transparent 46%, #584125 46%, #584125 52%, transparent 52%, transparent 100%);
     background: linear-gradient(-45deg, transparent 0%, transparent 46%, #584125 46%, #584125 52%, transparent 52%, transparent 100%), linear-gradient(45deg, transparent 0%, transparent 46%, #584125 46%, #584125 52%, transparent 52%, transparent 100%);
     -webkit-transform: rotate(180deg);
         -ms-transform: rotate(180deg);
             transform: rotate(180deg);
-  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    #navigation_button {
+        background: linear-gradient();
+    }
+}
 
 .div_nav_open{
     position: absolute;
@@ -847,4 +853,6 @@ input[type='radio'] {
   to {opacity: 1}
 }
 
-
+#fileInput, #imageCanvas, #bild, #preview_text {
+    padding-left: 20px;
+}

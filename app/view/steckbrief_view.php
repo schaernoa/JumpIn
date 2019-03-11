@@ -1,7 +1,10 @@
 <?php
     //Hole die richtige SteckbriefID. Entweder aus Session oder aus Post
     if(empty($_POST['id_user'])){
-        $userid = $_SESSION['steckbrief_id'];
+        //Neu
+        $userid = getUserIDByUsername($_SESSION['benutzer_app']);
+        /* alt
+        $userid = $_SESSION['steckbrief_id'];*/
     }
     else{
         $_SESSION['steckbrief_id'] = $_POST['id_user'];
@@ -33,9 +36,21 @@
                         echo '<img class="img_steckbrief_details" src="./image/benutzer.jpg" alt="Profilbild"/>';
                     }
                     echo '
-                    <input class="forms_file_details" type="file" accept=".jpg, .jpeg, .png" name="bild" form="editForm"/>
-                </div>
-            ';
+                    <div>
+                        <input type="file" id="fileInput" name="bild" accept=".jpg, .jpeg, .png" />
+                        <canvas id="imageCanvas" width="200" height="200" style="display:none; border:0px solid #000000;">
+                        </canvas>
+                    </div>
+                    <div id="preview">
+                        <p id="preview_text" style="display:none">Vorschau:</p>
+                    </div>
+                    <input id="srcimg" type="hidden" name="srcbild" value="" form="editForm"/>';
+
+                    //Scripts für die Vorschau einbinden
+                    echo'
+                    <script src="./js/ImageCropperTest.js"></script>
+		            <script src="./js/ImageCropper.js"></script>
+                ';
             $steckbriefkategorien = getCharacteristicsCategoryByObligation();
             //Für jede obligatorische Steckbriefkategorie
             while($row = mysqli_fetch_assoc($steckbriefkategorien)){

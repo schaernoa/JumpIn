@@ -21,23 +21,47 @@
             }
             //Wenn jede Kategorie ausgefüllt wurde
             if($x == $y){
-                $urlbild = $_POST['srcbild'];
-                if(!$urlbild == ""){
+                //Wenn ein File angegeben wurde
+                if(!$_FILES['bild']['name'] == ""){
 
-                    $uploaddir = getcwd()."./userimages/";
-                    $uploaddir = trim($uploaddir);
-                    $filename = getUserIDByUsername($_SESSION['benutzer_app']);
-                    $fullfileName = $filename. ".png";
-                    $fullpath = $uploaddir.$fullfileName;
+                    $allowed =  array('jpeg','png','jpg');
+                    $filename = $_FILES['bild']['name'];
+                    $extension = pathinfo($filename, PATHINFO_EXTENSION);
+                    //Wenn die Dateiendung erlaubt ist
+                    if(in_array(strtolower($extension),$allowed)) {
+                        //Wenn Bild < als 8MB
+                        if(filesize($_FILES['bild']['tmp_name']) < 8388608){
 
-                    $img = $urlbild;
-                    $img = str_replace('data:image/png;base64,', '', $img);
-                    $img = str_replace(' ', '+', $img);
-                    $data = base64_decode($img);
-                    file_put_contents($fullpath, $data);
+                            $orgfile = $_FILES['bild']['tmp_name'];
 
-                    if(!file_exists($fullpath)){
-                        $_SESSION['error'] = "Das Bild konnte nicht gespeichert werden!";
+                            list($width, $height) = getimagesize($orgfile);
+        
+                            $newfile = imagecreatefrompng($orgfile);
+                            $newwidth = $newheight = 200;
+        
+                            $uploaddir = getcwd()."/userimages/ ";
+                            $uploaddir = trim($uploaddir);
+                            $fileNewName = getUserIDByUsername($_SESSION['benutzer_app']);
+                            $fullfileNewName = $fileNewName. ".png";
+        
+                            $fileNewPath = $uploaddir.$fullfileNewName;
+
+                            $truecolor = imagecreatetruecolor($newwidth, $newheight);
+                            imagecopyresampled($truecolor, $newfile, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
+                            
+                            imagepng($truecolor,$fileNewPath,9);
+        
+                            imagedestroy($orgfile);
+                            imagedestroy($newfile);
+                            
+                            $validated = true;
+                        }
+                        else{
+                            $_SESSION['error'] = "Zu grosses Bild eingelesen!";
+                        }
+                    }
+                    else{
+                        $_SESSION['error'] = "Das eingelesene File ist kein Bild!";
                     }
                 }
                 else{
@@ -57,8 +81,11 @@
                 //in der Datenbank den Datensatz ändern
                 updateCharacteristics($validate, $userid, $steckbrief);
             }
+            header('Location: steckbrief_view');
         }
-        header('Location: steckbrief_view');
+        else{
+            header('Location: steckbrief_view');
+        }
     }
     else if($_POST['submit_btn'] == "Kategorie hinzufügen"){
         header('Location: steckbrief_kategorie_add');
@@ -69,7 +96,6 @@
             $_SESSION['mode'] = $_POST['mode'];
         }
         if($_SESSION['mode'] == "steckbrief"){
-            removesessioninvalid(array("steckbrief"));
             header('Location: steckbrief');
         }
         else if($_SESSION['mode'] == "wochenplan") {
@@ -93,7 +119,7 @@
         $targetHeight=200;
     
     
-        $targetLayer=imagecreatebackground($targetWidth,$targetHeight);
+        $targetLayer=imagecreatetruecolor($targetWidth,$targetHeight);
         imagecopyresampled($targetLayer,$imageResourceId,0,0,0,0,$targetWidth,$targetHeight, $width,$height);
     
     

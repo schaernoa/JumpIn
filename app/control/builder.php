@@ -209,9 +209,7 @@
 										$return .= '
 											<form action="einschreiben_choice" method="post">
 												<button class="button_navigation">
-													<a class="a_header_special" href="">
-														'.$row1['name'].'
-													</a>
+													<a class="a_header_special" href="einschreiben_choice">'.$row1['name'].'</a>
 												</button>
 												<input type="hidden" name="id_aktivitaetsart" value="'.$row1['id_art'].'">
 											</form>

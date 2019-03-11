@@ -1,4 +1,5 @@
 <?php
+
     //Fehlermeldung löschen
     $_SESSION['error'] = NULL;
     $validated = false;
@@ -21,28 +22,30 @@
                 }
                 //Wenn alle Kategorien ausgefüllt wurden
                 if($x == $y){
-                    $allowed =  array('jpeg','png','jpg');
-                    $filename = $_FILES['bild']['name'];
-                    $extension = pathinfo($filename, PATHINFO_EXTENSION);
-                    //Wenn die File-Endung erlaubt ist
-                    if(in_array(strtolower($extension),$allowed)) {
-                        //Wenn das Bild kleiner ist als 8MB
-                        if(filesize($_FILES['bild']['tmp_name']) < 8388608){
-                            $uploaddir = getcwd()."/userimages/ ";
-                            $uploaddir = trim($uploaddir);
-                            $filename = getUserIDByUsername($_SESSION['benutzer_app']);
-                            //pfad zum speichern festlegen
-                            $uploadfile = $uploaddir.$filename.".png";
-                            //das Bild verschieben und benennen
-                            move_uploaded_file($_FILES['bild']['tmp_name'], $uploadfile);
+                    $urlbild = $_POST['srcbild'];
+                    if(!$urlbild == ""){
+
+                        $uploaddir = getcwd()."./userimages/";
+                        $uploaddir = trim($uploaddir);
+                        $filename = getUserIDByUsername($_SESSION['benutzer_app']);
+                        $fullfileName = $filename. ".png";
+                        $fullpath = $uploaddir.$fullfileName;
+
+                        $img = $urlbild;
+                        $img = str_replace('data:image/png;base64,', '', $img);
+                        $img = str_replace(' ', '+', $img);
+                        $data = base64_decode($img);
+                        file_put_contents($fullpath, $data);
+
+                        if(file_exists($fullpath)){
                             $validated = true;
                         }
                         else{
-                            $_SESSION['error'] = "Zu grosses Bild eingelesen!";
+                            $_SESSION['error'] = "Das Bild konnte nicht gespeichert werden!";
                         }
                     }
                     else{
-                        $_SESSION['error'] = "Das eingelesene File ist kein Bild!";
+                        $_SESSION['error'] = "urlbild ist leer ".$urlbild;
                     }
                 }
                 else{

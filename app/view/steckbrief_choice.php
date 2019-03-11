@@ -17,6 +17,9 @@
         $array2 = array("steckbrief_kategorie_add", "validate_steckbrief_kategorie_add", "steckbrief", "steckbrief_view", "validate_steckbrief_order", "validate_steckbrief_loeschen");
         addSessionInvalid($array2);
         header('Location: steckbrief_add');
+        //Neu -------------------------------
+        $_SESSION['mode'] = "steckbrief";
+        //-----------------------------------
     }
     else{
         $characteristics = 0;
