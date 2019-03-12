@@ -221,35 +221,15 @@
         //Für jeden Tag im $daylisttime Array
         foreach($daylisttime as $day){
             $gaptobefore = -10;
-            $overlapping = 0;
             //Für jede Aktivität im Tag
             foreach($day as $activity){
                 //Wenn die Aktivität mit irgendeiner anderen überschneidet
-                if(!isOverlapping($day, $activity)){
+                if(!isOverlappedBefore($day, $activity)){
                     //Abstand mehr nach oben um 10 erhöhen
                     $gaptobefore += 10;
-                    $overlapping = 0;
-                }
-                else{
-                    //Wenn es die erste Aktivität nach einer überschneidenden Sektion an Aktivitäten ist
-                    if($overlapping == 0){
-                        $gaptobefore += 10;
+                    if(hasSameStartTime($day, $activity)){
+                        $gaptobefore -= 10;
                     }
-                    else{
-                        //hol die Aktivität mit der grössten Endzeit vor der aktuellen Aktivität
-                        $lastactivity = getLastEndzeit($day, $activity);
-                        //Wenn eine solche Aktivität existiert
-                        if($lastactivity != NULL){
-                            //Wenn die Endzeit der vorderen Aktivität kleiner oder gleich als die Startzeit der jetzigen Aktivität ist
-                            if(strtotime($lastactivity->getEndzeit()) <= strtotime($activity->getStartzeit())){
-                                //Wenn beide Aktivitäten in der ersten Spalte sind
-                                if($activity->getColumn() == 0 && $lastactivity->getColumn() == 0){
-                                    $gaptobefore += 10;
-                                }
-                            }
-                        }
-                    }
-                    $overlapping++;
                 }
                 //Setze alle physikalischen Werte für die Aktivitäten
                 getHeight($activity);
@@ -292,6 +272,60 @@
         return false;
     }
 
+    //Methode um zu schauen, ob bei der $activity der Start umgeben von einer anderen Acitvity ist
+    //$day: ein Tag Array mit Aktivitäten gefüllt, entsprungen von $daylisttime
+    //$activity: Aktivität Objekt
+    function isOverlappedBefore($day, $activity){
+        global $daylistcolumns, $daylisttime;
+        //hole die anzahl Spalten die dieser Tag hat
+        $allcolumns = count($daylistcolumns[array_search($day, $daylisttime)]);
+        //hole die Nummer der Spalte auf der die Aktivität ist
+        $column = $activity->getColumn();
+        //Solange wie es Spalten gegen rechts hat
+        for($i = 1; $i <= $allcolumns - ($column + 1); $i++){
+            //für jede Aktivität in einer der Spalten gegen rechts
+            foreach($daylistcolumns[array_search($day, $daylisttime)][$column + $i] as $activitytwo){
+                //Wenn diese Aktivität irgendwie mit der vom Parameter überschneidet
+                if(strtotime($activity->getStartzeit()) > strtotime($activitytwo->getStartzeit()) && strtotime($activity->getStartzeit()) < strtotime($activitytwo->getEndzeit())){
+                    return true;
+                }
+            }
+        }
+        //Solange wie es Spalten hat
+        for($i = 1; $i < $column + 1; $i++){
+            //für jede Aktivität in einer der Spalten gegen links
+            foreach($daylistcolumns[array_search($day, $daylisttime)][$column - $i] as $activitytwo){
+                //Wenn diese Aktivität irgendwie mit der vom Parameter überschneidet
+                if(strtotime($activity->getStartzeit()) > strtotime($activitytwo->getStartzeit()) && strtotime($activity->getStartzeit()) < strtotime($activitytwo->getEndzeit())){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    //Methode zu schauen, ob es mind. eine andere Activity in einer Spalte weiter links von der $activity gibt, welche die gleiche Startzeit wie die $activity hat
+    //$day: ein Tag Array mit Aktivitäten gefüllt, entsprungen von $daylisttime
+    //$activity: Aktivität Objekt
+    function hasSameStartTime($day, $activity){
+        global $daylistcolumns, $daylisttime;
+        //hole die anzahl Spalten die dieser Tag hat
+        $allcolumns = count($daylistcolumns[array_search($day, $daylisttime)]);
+        //hole die Nummer der Spalte auf der die Aktivität ist
+        $column = $activity->getColumn();
+        //Solange wie es Spalten hat
+        for($i = 1; $i < $column + 1; $i++){
+            //für jede Aktivität in einer der Spalten gegen links
+            foreach($daylistcolumns[array_search($day, $daylisttime)][$column - $i] as $activitytwo){
+                //Wenn diese Aktivität irgendwie mit der vom Parameter überschneidet
+                if(strtotime($activity->getStartzeit()) == strtotime($activitytwo->getStartzeit())){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
     //Methode um die Aktivität mit der grössten Endzeit herauszufinden, wo die Endzeit jedoch aber kleiner ist als $activity's Startzeit
     //$day: ein Tag Array mit Aktivitäten gefüllt, entsprungen von $daylisttime
     //$activity: Aktivität Objekt
@@ -302,7 +336,7 @@
         //für jede Aktivität vom selben Tag wie $day
         foreach($daylisttime[array_search($day, $daylisttime)] as $activitytwo){
             //Wenn die Endzeit von dieser Aktivität kleiner ist als die Startzeit der Aktivität vom Parameter $activity
-            if(strtotime($activitytwo->getEndzeit()) < strtotime($activity->getStartzeit())){
+            if(strtotime($activitytwo->getEndzeit()) <= strtotime($activity->getStartzeit())){
                 $end = strtotime($activitytwo->getEndzeit());
                 //Wenn die Endzeit dieser Aktivität grösser ist als jede bisher durchiterierte
                 if($end > $biggestendnumber){
