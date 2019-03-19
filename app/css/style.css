@@ -853,7 +853,7 @@ input[type='radio'] {
     height: 2px; width: 30px; 
     background: #000000; border-radius: 2px;
     display: block; 
-    transition: 0.5s; 
+    transition: 0.25s; 
     transform-origin: center; 
  }
  
