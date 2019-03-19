@@ -30,40 +30,6 @@ h2{
     margin: 15px calc(100% - 80% - 20px) 15px 20px;
     word-wrap:break-word;
 }
-#navigation_button {
-    display: block;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    border-radius: 0px;
-    margin: 15% auto;
-    -webkit-transition: all .3s ease, -webkit-transform .2s ease;
-            transition: all .3s ease, transform .2s ease;
-    background: linear-gradient(to bottom, transparent 0%, transparent 23%, #584125 23%, #584125 29%, transparent 29%, transparent 52%, #584125 52%, #584125 58%, transparent 58%, transparent 81%, #584125 81%, #584125 87%, transparent 87%);
-}
-@media screen and (-webkit-min-device-pixel-ratio:0) { 
-    #navigation_button {
-        background: linear-gradient(to bottom, transparent 0%, transparent 23%, #584125 23%, #584125 29%, transparent 29%, transparent 52%, #584125 52%, #584125 61%, transparent 61%, transparent 84%, #584125 84%, #584125 90%, transparent 90%);
-    }
-}
-@-moz-document url-prefix() {
-    #navigation_button {
-        background: linear-gradient(to bottom, transparent 0%, transparent 23%, #584125 23%, #584125 29%, transparent 29%, transparent 52%, #584125 52%, #584125 58%, transparent 58%, transparent 81%, #584125 81%, #584125 87%, transparent 87%);
-    }
-}
-#navigation_button.clicked {
-    background: -webkit-linear-gradient(135deg, transparent 0%, transparent 46%, #584125 46%, #584125 52%, transparent 52%, transparent 100%), -webkit-linear-gradient(45deg, transparent 0%, transparent 46%, #584125 46%, #584125 52%, transparent 52%, transparent 100%);
-    background: linear-gradient(-45deg, transparent 0%, transparent 46%, #584125 46%, #584125 52%, transparent 52%, transparent 100%), linear-gradient(45deg, transparent 0%, transparent 46%, #584125 46%, #584125 52%, transparent 52%, transparent 100%);
-    -webkit-transform: rotate(180deg);
-        -ms-transform: rotate(180deg);
-            transform: rotate(180deg);
-}
-
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-    #navigation_button {
-        background: linear-gradient();
-    }
-}
 
 .div_nav_open{
     position: absolute;
@@ -866,3 +832,43 @@ input[type='radio'] {
     padding: 10px;
     font-size: 18pt;
 }
+
+.hamburg { 
+    display: block;
+    border-radius: 4px; 
+    transition: border-radius .5s;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+ }
+ 
+ .line { 
+    position: absolute; 
+    left:10px;
+    height: 2px; width: 30px; 
+    background: #000000; border-radius: 2px;
+    display: block; 
+    transition: 0.5s; 
+    transform-origin: center; 
+ }
+ 
+ .line:nth-child(1) { top: 14px; }
+ .line:nth-child(2) { top: 24px; }
+ .line:nth-child(3) { top: 34px; }
+ 
+ .hamburg.checked .line:nth-child(1){
+    transform: translateY(10px) rotate(-45deg);
+ }
+ 
+ .hamburg.checked .line:nth-child(2){
+    opacity:0;
+ }
+ 
+ .hamburg.checked .line:nth-child(3){
+    transform: translateY(-10px) rotate(45deg);
+ }

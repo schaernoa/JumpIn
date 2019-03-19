@@ -21,8 +21,10 @@ if($_SESSION['benutzer_app']){
             <a href="home">
                 <img class="img_header_two" src="./image/postlogo.png" alt="postlogo">
             </a>
-            <div class="div_nav_open">
-                <span id="navigation_button" onclick="openNav()"></span>
+            <div class="hamburg">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
             </div>
         </nav>
     </header>';
@@ -45,8 +47,10 @@ else{
             <a href="home">
                 <img class="img_header_two" src="./image/postlogo.png" alt="postlogo">
             </a>
-            <div class="div_nav_open">
-                <span id="navigation_button" onclick="openNav()"></span>
+            <div class="hamburg">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
             </div>
         </nav>
     </header>';
@@ -54,16 +58,18 @@ else{
 
 ?>
 <script>
-    document.getElementById('navigation_button').addEventListener('click', function () {
-        if (this.classList.contains('clicked')) {
-            this.classList.remove('clicked');
+    var hamburger = document.querySelector(".hamburg");
+    hamburger.onclick = function () {
+        if (this.classList.contains("checked")) {
+            this.classList.remove("checked");
             closeNav();
         }
         else {
-            this.classList.add('clicked');
+            this.classList.add("checked");
             openNav();
         }
-    });
+    }
+
     function openNav() {
         document.getElementById("div_navigation").style.width = "100%";
         document.getElementsByTagName("body")[0].style = 'overflow-y: hidden;'
