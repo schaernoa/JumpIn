@@ -25,7 +25,7 @@
                     $urlbild = $_POST['srcbild'];
                     if(!$urlbild == ""){
 
-                        $uploaddir = getcwd()."./userimages/";
+                        $uploaddir = getcwd()."/userimages/";
                         $uploaddir = trim($uploaddir);
                         $filename = getUserIDByUsername($_SESSION['benutzer_app']);
                         $fullfileName = $filename. ".png";
@@ -35,8 +35,8 @@
                         $img = str_replace('data:image/png;base64,', '', $img);
                         $img = str_replace(' ', '+', $img);
                         $data = base64_decode($img);
-                        file_put_contents($fullpath, $data);
 
+                        file_put_contents($fullpath, $data);
                         if(file_exists($fullpath)){
                             $validated = true;
                         }
@@ -45,7 +45,7 @@
                         }
                     }
                     else{
-                        $_SESSION['error'] = "urlbild ist leer ".$urlbild;
+                        $_SESSION['error'] = "Es muss ein Bild ausgewählt sein!";
                     }
                 }
                 else{

@@ -854,5 +854,15 @@ input[type='radio'] {
 }
 
 #fileInput, #imageCanvas, #bild, #preview_text {
-    padding-left: 20px;
+    margin-left: 20px;
+}
+
+#imageCanvas{
+    margin-top: 20px;
+}
+
+.p_header_special{
+    margin: 0;
+    padding: 10px;
+    font-size: 18pt;
 }

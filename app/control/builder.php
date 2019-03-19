@@ -8,6 +8,7 @@
 			<head>
 				<title>Jump-in App</title>
 				<link rel="stylesheet" href="./css/style.css">
+				<link rel="icon" href="../favicon.ico" type="image/x-icon"/>
 				<meta charset="UTF-8">
 				<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 			</head>
@@ -209,7 +210,7 @@
 										$return .= '
 											<form action="einschreiben_choice" method="post">
 												<button class="button_navigation">
-													<a class="a_header_special" href="einschreiben_choice">'.$row1['name'].'</a>
+													<p class="p_header_special">'.$row1['name'].'</p>
 												</button>
 												<input type="hidden" name="id_aktivitaetsart" value="'.$row1['id_art'].'">
 											</form>
