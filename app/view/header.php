@@ -22,9 +22,7 @@ if($_SESSION['benutzer_app']){
                 <img class="img_header_two" src="./image/postlogo.png" alt="postlogo">
             </a>
             <div class="hamburg">
-                <span class="line"></span>
-                <span class="line"></span>
-                <span class="line"></span>
+                <img id="img_header_burger" src="./image/burger_closed.png" alt="Menu">
             </div>
         </nav>
     </header>';
@@ -48,9 +46,7 @@ else{
                 <img class="img_header_two" src="./image/postlogo.png" alt="postlogo">
             </a>
             <div class="hamburg">
-                <span class="line"></span>
-                <span class="line"></span>
-                <span class="line"></span>
+                <img id="img_header_burger" src="./image/burger_closed.png" alt="Menu">
             </div>
         </nav>
     </header>';
@@ -62,10 +58,12 @@ else{
     hamburger.onclick = function () {
         if (this.classList.contains("checked")) {
             this.classList.remove("checked");
+            document.getElementById("img_header_burger").src = "./image/burger_closed.png";
             closeNav();
         }
         else {
             this.classList.add("checked");
+            document.getElementById("img_header_burger").src = "./image/burger_opened.png";
             openNav();
         }
     }
