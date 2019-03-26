@@ -45,28 +45,34 @@ else{
             <a href="home">
                 <img class="img_header_two" src="./image/postlogo.png" alt="postlogo">
             </a>
-            <div class="hamburg">
-                <img id="img_header_burger" src="./image/burger_closed.png" alt="Menu">
+            <div id="burger" class="hamburg">
+                <img class="bottom transparent" src="./image/burger_opened.png" alt="Menu">
+                <img class="top" src="./image/burger_closed.png" alt="Menu">
             </div>
         </nav>
     </header>';
 }
 
 ?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
+    /*
     var hamburger = document.querySelector(".hamburg");
+    
     hamburger.onclick = function () {
         if (this.classList.contains("checked")) {
             this.classList.remove("checked");
-            document.getElementById("img_header_burger").src = "./image/burger_closed.png";
+            $("#burger img.top").toggleClass("transparent");
+            $("#burger img.bottom").toggleClass("transparent");
             closeNav();
         }
         else {
             this.classList.add("checked");
-            document.getElementById("img_header_burger").src = "./image/burger_opened.png";
+            $("#burger img.top").toggleClass("transparent");
+            $("#burger img.bottom").toggleClass("transparent");
             openNav();
         }
-    }
+    }*/
 
     function openNav() {
         document.getElementById("div_navigation").style.width = "100%";
@@ -75,5 +81,25 @@ else{
     function closeNav() {
         document.getElementById("div_navigation").style.width = "0%";
         document.getElementsByTagName("body")[0].style = 'overflow-y: visible;'
-    } 
+    }
+
+    $(document).ready(function() {
+        $("#burger").click(function() {
+            $("#burger img").toggleClass("transparent");
+            $("#burger img").toggleClass("transparent");
+
+            if (this.classList.contains("checked")) {
+            this.classList.remove("checked");
+            $("#burger img.top").toggleClass("transparent");
+            $("#burger img.bottom").toggleClass("transparent");
+            closeNav();
+            }
+            else {
+                this.classList.add("checked");
+                $("#burger img.top").toggleClass("transparent");
+                $("#burger img.bottom").toggleClass("transparent");
+                openNav();
+            }
+        });
+    });
 </script>
