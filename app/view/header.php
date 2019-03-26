@@ -46,7 +46,7 @@ else{
             <a href="home">
                 <img class="img_header_two" src="./image/postlogo.png" alt="postlogo">
             </a>
-            <div id="burger" class="hamburg">
+            <div id="burger">
                 <img class="bottom transparent" src="./image/burger_opened.png" alt="Menu">
                 <img class="top" src="./image/burger_closed.png" alt="Menu">
             </div>
@@ -63,17 +63,15 @@ else{
             $("#burger img").toggleClass("transparent");
 
             if (this.classList.contains("checked")) {
-            this.classList.remove("checked");
-            $("#burger img.top").toggleClass("transparent");
-            $("#burger img.bottom").toggleClass("transparent");
-            closeNav();
+                this.classList.remove("checked");
+                closeNav();
             }
             else {
                 this.classList.add("checked");
-                $("#burger img.top").toggleClass("transparent");
-                $("#burger img.bottom").toggleClass("transparent");
                 openNav();
             }
+            $("#burger img.top").toggleClass("transparent");
+            $("#burger img.bottom").toggleClass("transparent");
         });
     });
 
