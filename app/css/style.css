@@ -290,6 +290,7 @@ tr:nth-child(even){
     background-color: #ebe4d1;
     color: #584125; 
     border: 1px solid #584125;
+    cursor: pointer;
 }
 .button_zurück:hover{
     background-color: #584125;

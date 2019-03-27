@@ -7,7 +7,7 @@
 <form action="validate_login" method="post">
 	<div id="div_form">
 		<p class="p_form">Benutzername</p>
-		<input class="forms_login" type="text" name="benutzername" value="<?php if(isset($benutzername)) {echo $benutzername;} ?>"/>
+		<input class="forms_login" id="benutzername" type="text" name="benutzername" value="<?php if(isset($benutzername)) {echo $benutzername;} ?>"/>
 		<br>
 		<p class="p_form">Passwort</p>
 		<input class="forms_login" type="password" name="passwort" value="<?php if(isset($passwort)) {echo $passwort;} ?>"/>
@@ -17,3 +17,7 @@
 		<input class="button_zurück" name="submit_btn" type="submit" value="Abbrechen"/>
 	</div>
 </form>
+
+<script type="text/javascript">
+	$("#benutzername").focus();
+</script>

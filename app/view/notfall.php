@@ -16,3 +16,6 @@
     }
 ?>
 </table>
+<form method="get" action="home">
+    <input class="button_zurück" type="submit" name="submit_btn" value="Zurück">
+<form>

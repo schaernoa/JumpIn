@@ -36,6 +36,8 @@
                         $img = str_replace(' ', '+', $img);
                         $data = base64_decode($img);
 
+                        unlink($fullpath);
+
                         file_put_contents($fullpath, $data);
                         if(file_exists($fullpath)){
                             $validated = true;
