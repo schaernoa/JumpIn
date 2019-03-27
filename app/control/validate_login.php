@@ -27,14 +27,26 @@
                 $_SESSION['error_login'] = null;
             }
             else{
-                //Fehler in error-Session speichern, und Benutzername zurückschicken
-                $_SESSION['error'] = "Unbekannter Benutzername und/oder falsches Passwort!";
-                $_SESSION['error_login'] = $benutzername;
-                header('Location: login');
-            }
-            if(empty($dbpasswort)){
-                $_SESSION['error'] = "Datenbank antwortet nicht";
-                header('Location: login');
+                //Fehlermeldung in error-Session speichern
+                if(isDatabaseReachable()){
+
+                    if(empty(getUserIDByUsername($benutzername))){
+                        $_SESSION['error'] = "Kein Benutzer mit diesem Benutzernamen vorhanden!";
+                        $_SESSION['error_login'] = null;
+                        header('Location: login');
+                    }
+                    else{
+                        $_SESSION['error'] = "Falsches Passwort!";
+                        $_SESSION['error_login'] = $benutzername;
+                        header('Location: login');
+                    }
+                }
+                else{
+                    $_SESSION['error'] = "Database is unreachable - Login not possible!";
+                    $_SESSION['error_login'] = $benutzername;
+                    header('Location: login');
+                }
+                
             }
         }
         else{
