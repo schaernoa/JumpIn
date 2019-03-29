@@ -216,6 +216,11 @@ h2{
     background-image: url('../image/notfall.jpg');
     background-size: cover;
 }
+.sectionEinstellungen{
+    background-image: url('../image/einstellungen.jpg');
+    background-size: cover;
+}
+
 .p_section{
     position: absolute;
     text-align: center;

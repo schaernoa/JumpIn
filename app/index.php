@@ -93,6 +93,12 @@
 			case 'validate_wochenplan_steckbrief_view':
 				build('validate_wochenplan_steckbrief_view.php');
 				break;
+			case 'einstellungen':
+				build('./view/einstellungen.php');
+				break;
+			case 'validate_einstellungen':
+				build('validate_einstellungen.php');
+				break;
 			default:
 				build('./view/home.php');
 				break;

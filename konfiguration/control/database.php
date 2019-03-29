@@ -4,16 +4,6 @@
         $db = array("localhost", "jumpin", "1234", "JumpIn");
         return new Mysqli($db[0], $db[1], $db[2], $db[3]);
     }
-
-    function isDatabaseReachable(){
-        $conn = mysqli_connect("localhost", "jumpin", "1234");
-        if (!$conn) {
-            return false;
-        }
-        else{
-            return true;
-        }
-    }
     
     function getAllUser(){
         $db = getDatabase();
@@ -802,6 +792,15 @@
         $hash = hash('sha256', $password . $username);
         $preparedquery = $db->prepare("UPDATE BENUTZER SET benutzername = ?, passwort = ?, name = ?, vorname = ? WHERE id_benutzer = '$userid'");
         $preparedquery->bind_param("ssss", $username, $hash, $name, $prename);
+        $preparedquery->execute();
+        $db->close();
+    }
+
+    function updatePasswordByID($userid, $password, $username){
+        $db = getDatabase();
+        $hash = hash('sha256', $password . $username);
+        $preparedquery = $db->prepare("UPDATE BENUTZER SET passwort = ? WHERE id_benutzer = '$userid'");
+        $preparedquery->bind_param("s", $hash);
         $preparedquery->execute();
         $db->close();
     }

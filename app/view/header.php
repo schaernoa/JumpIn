@@ -9,6 +9,7 @@ if($_SESSION['benutzer_app']){
             <a href="steckbrief_choice">Steckbrief</a>
             '.getFeedback('header').'
             <a href="notfall">Notfall</a>
+            <a href="einstellungen">Einstellungen</a>
         </div>
     </div>
     <header>

@@ -30,6 +30,13 @@
                 </section>
             </a>
         ';
+        echo '
+            <a class="a_section" href="einstellungen">
+                <section class="section sectionEinstellungen">
+                    <p class="p_section_default">Einstellungen</p>
+                </section>
+            </a>
+        ';
     }
     else{
         //Die erlaubten Files festlegen
