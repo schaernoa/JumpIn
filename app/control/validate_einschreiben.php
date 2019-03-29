@@ -21,6 +21,7 @@
                 //Wenn es weniger Teilnehmer als das maximum hat
                 if($participants < $aktivitaet['anzahlteilnehmer']){
                     insertWritein($userid, $_POST['aktivitaetid']);
+                    $_SESSION['writtenin_success'] = "true";
                     header('Location: home');
                 }
                 else{

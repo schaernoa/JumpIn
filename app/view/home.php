@@ -5,6 +5,12 @@
     $_SESSION['error_login'] = null;
     //Wenn der benutzer eingeloggt ist
     if($_SESSION['benutzer_app']){
+        
+        if($_SESSION['writtenin_success'] == "true"){
+            $message = "Erfolgreich eingeschrieben";
+            echo "<script type='text/javascript'>alert('$message');</script>";
+            $_SESSION['writtenin_success'] = null;
+        }
         //Hole alle Aktivitätsarten die momentan etwas einzuschreiben haben
         getWriteinPossebilities('home');
         echo '

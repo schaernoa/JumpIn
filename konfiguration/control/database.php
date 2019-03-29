@@ -4,6 +4,16 @@
         $db = array("localhost", "jumpin", "1234", "JumpIn");
         return new Mysqli($db[0], $db[1], $db[2], $db[3]);
     }
+
+    function isDatabaseReachable(){
+        $conn = new mysqli("localhost", "jumpin", "1234");
+        if ($conn->connect_error) {
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
     
     function getAllUser(){
         $db = getDatabase();

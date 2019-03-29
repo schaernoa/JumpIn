@@ -1,7 +1,10 @@
 <?php
     //Error Session leeren
-    $_SESSION['error'] = NULL;
+    //$_SESSION['error'] = NULL;
     $id;
+    
+    require_once('error.php');
+    
     //Hole die richtige AktivitätsartID. Entweder aus Session oder aus Post
     if(empty($_POST['id_aktivitaetsart'])){
         $id = intval($_SESSION['id_aktivitaetsart']);

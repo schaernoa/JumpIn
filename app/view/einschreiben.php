@@ -65,8 +65,14 @@
                 echo '
                     <form action="validate_wochenplan_steckbrief_view" method="post">
                         <button class="button_wochenplan_steckbrief">
-                            <div class="div_wochenplan_view_teilnehmer">
-                                <img class="img_wochenplan_view" src="./userimages/'.$user['id_benutzer'].'.png?t='.filemtime('./userimages/'.$user['id_benutzer'].'.png').'" alt="Profilbild"/>
+                            <div class="div_wochenplan_view_teilnehmer">';
+                                if(file_exists('./userimages/'.$user['id_benutzer'].'.png')){
+                                    echo '<img class="img_wochenplan_view" src="./userimages/'.$user['id_benutzer'].'.png?t='.filemtime('./userimages/'.$user['id_benutzer'].'.png').'" alt="Profilbild"/>';
+                                }
+                                else{
+                                    echo '<img class="img_wochenplan_view" src="./image/benutzer.jpg" alt="Profilbild"/>';
+                                }
+                                echo '
                                 <p class="p_wochenplan_view">'.$user['vorname'].' '.$user['name'].'</p>
                             </div>
                         </button> 
