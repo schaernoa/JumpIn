@@ -314,6 +314,20 @@ tr:nth-child(even){
     cursor: pointer;
     width: 100%;
 }
+
+.button_wochenplan_view{
+    height: 130px;
+    border-bottom: 1px solid #ebe4d1;
+    border-top: 1px solid #ebe4d1;
+    border-right: none;
+    background-color: white;
+    border-radius: 0;
+    padding: 0;
+    margin-bottom: -1px;
+    float: left;
+    width: 100%;
+}
+
 .button_steckbrief:hover, .button_wochenplan_steckbrief:hover{
     background-color: #ebe4d1;
 }

@@ -11,7 +11,7 @@
         $aktivitaet = $_SESSION['wochenplan_view_id'];
     }
     //Wenn die AktivitätID nicht leer ist
-    if(!empty($aktivitaet)){
+    if(!empty($aktivitaet) & empty($_POST['name'])){
         $activity = getActivityByID($aktivitaet);
         echo '
             <h2>'.$activity['aktivitaetsname'].'</h2>
@@ -75,6 +75,36 @@
         }
         echo '
             <form action="validate_wochenplan_view" method="post">
+                <input class="button_zurück" type="submit" name="submit_btn" value="Zurück"/>
+            </form>
+        ';
+    }
+    else if(!empty($aktivitaet) & !empty($_POST['name'])){
+        $blockname = $_POST['name'];
+        echo '
+            <h2>Aktivitäten</h2>
+            <p class="p_untertitel">Hier siehst du alle Aktivitäten vom Aktivitätsblock - <b>'.$blockname.'</b>, welche dir bald zur Verfügung stehen werden.</p>
+        ';
+        $activities = getAllActivitiesInActivityBlockByName($blockname);
+        while($row = mysqli_fetch_assoc($activities)){
+            //Wenn die Startzeit der Aktivität nicht Vergangenheit ist und sich der Benutzer nicht eingeschrieben hat
+            if(strtotime($row['startzeit']) - strtotime(date("Y-m-d H:i:s"))){
+                echo '
+                    <button class="button_wochenplan_view">
+                        <div class="div_einschreiben">
+                            <p class="p_steckbrief_name">
+                                '.$row['aktivitaetsname'].'   
+                            </p>
+                            <p class="p_steckbrief_gruppe">
+                                '.getDateString($row['startzeit']).' '.getHours($row['startzeit']).' - '.getHours($row['endzeit']).' Uhr
+                            </p>
+                        </div>
+                    </button>
+                ';
+            }
+        }
+        echo '
+            <form action="wochenplan" method="post">
                 <input class="button_zurück" type="submit" name="submit_btn" value="Zurück"/>
             </form>
         ';

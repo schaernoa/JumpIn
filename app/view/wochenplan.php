@@ -71,12 +71,13 @@
         }
     }
     //Globale Variablen
-    global $daylistcolumns, $daylisttime, $nowline, $colors, $activityclasses;
-    $colors = array("286DA8", "CD5360", "B37D4E", "438496", "A895E2", "780CE8", "E8880C", "9B7E84", "67C06B", "362866", "664222", "0D375B", "802731", "A35971", "EC9B24", "009B32", "4A6068", "4E383D", "8E3306", "867A4A");
+    global $daylistcolumns, $daylisttime, $nowline, $colors, $activityclasses, $filledActivityBlocks;
+    $colors = array("286DA8", "CD5360", "67C06B", "438496", "9B7E84", "A895E2", "B37D4E", "780CE8", "E8880C", "362866", "664222", "0D375B", "802731", "A35971", "EC9B24", "009B32", "4A6068", "4E383D", "8E3306", "867A4A");
     $nowline = false;
     $daylistcolumns = array();
     $daylisttime = array();
     $activityclasses = array();
+    $filledActivityBlocks = array();
     buildWeekschedule();
 
     //Error Session leeren
@@ -160,7 +161,110 @@
                 $number++;
                 $faktor = 0;
             }
+            //neu: Platzhalter für nicht eingeschriebene Activities
+            else if(notWrittenInYet($activity, $userid)){
+                if($activitybefore != NULL){
+                    //Wenn es nicht derselbe Tag wie der der Aktivität zuvor ist
+                    if(getDateString($activity['startzeit']) != getDateString($activitybefore['startzeit'])){
+                        $daytime = array();
+                        $daycolumns = array();
+                        $column = array();
+                        //neues Aktivität Objekt
+                        $activityobject = new Activity(0, getNameOfNotWrittenInActivityBlock($activity['id_aktivitaet']), $activity['startzeit'], $activity['endzeit'], $activity['art_id'], 0, $number);
+                        //Objekt in beiden Listen integrieren
+                        array_push($daytime, $activityobject);
+                        array_push($daylisttime, $daytime);
+                        array_push($column, $activityobject);
+                        array_push($daycolumns, $column);
+                        array_push($daylistcolumns, $daycolumns);
+                    }
+                    else{
+                        $daycolumns = $daylistcolumns[count($daylistcolumns) - 1];
+                        $columns = count($daycolumns);
+                        //Finde heraus in welcher Spalte es Platz für die neue Aktivität hat
+                        $nextcolumn = getNextColumn($activity, $daycolumns, $columns, 1);
+                        //das neue Aktivität Objekt erstellen
+                        $activityobject = new Activity(0, getNameOfNotWrittenInActivityBlock($activity['id_aktivitaet']), $activity['startzeit'], $activity['endzeit'], $activity['art_id'], $nextcolumn, $number);
+                        //das neue Objekt in beiden Listen an der richtigen Stelle integrieren
+                        array_push($daylisttime[count($daylisttime) - 1], $activityobject);
+                        if($nextcolumn >= $columns){
+                            $column = array();
+                            array_push($column, $activityobject);
+                            array_push($daylistcolumns[count($daylistcolumns) - 1], $column);
+                        }
+                        else{
+                            array_push($daylistcolumns[count($daylistcolumns) - 1][$nextcolumn], $activityobject);
+                        }
+                    }
+                }
+                else{
+                    $daytime = array();
+                    $daycolumns = array();
+                    $column = array();
+                    //neues Aktivität Objekt erstellen
+                    $activityobject = new Activity(0, getNameOfNotWrittenInActivityBlock($activity['id_aktivitaet']), $activity['startzeit'], $activity['endzeit'], $activity['art_id'], 0, $number);
+                    //Objekt in beiden Listen integrieren
+                    array_push($daytime, $activityobject);
+                    array_push($daylisttime, $daytime);
+                    array_push($column, $activityobject);
+                    array_push($daycolumns, $column);
+                    array_push($daylistcolumns, $daycolumns);
+                }
+                //Wenn die Aktivitätsart noch nicht im Aktivitätklassen Array ist, integriere sie
+                //Wird gebraucht um den verschiedenen Aktivitätsarten im Wochenplan verschiedene Farben zu geben
+                if(!in_array($activity['art_id'], $activityclasses)){
+                    array_push($activityclasses, $activity['art_id']);
+                }
+                //die Aktivität von zuvor wird zu der aktuellen
+                $activitybefore = $activity;
+                $number++;
+                $faktor = 0;
+            }
         }
+    }
+
+    //neu: bei dieser Funktion soll Blockname angezeigt werden
+    function notWrittenInYet($activity, $userid){
+        //Wenn es eine Aktivität zum einschreiben ist
+        if($activity['aktivitaetblock_id'] != NULL){
+            $writtenin = getWrittenIn($userid, $activity['id_aktivitaet']);
+            //Wenn der Benutzer nicht eingeschrieben ist
+            if($writtenin['aktivitaet_id'] != $activity['id_aktivitaet']){
+                global $filledActivityBlocks;
+                $activityblock = getActivityBlockByActivityid($activity['id_aktivitaet']);
+                $allactivities = getActivityByActivityBlockidAndUserid($activity['aktivitaetblock_id'], $userid);
+                $elements = 0;
+                while(mysqli_fetch_assoc($allactivities)){
+                    $elements++;
+                }
+                //Wenn in diesem Aktivitätsblock bereits eine andere Aktivität ausgewählt wurde
+                if($elements == 0){
+                    //Wenn es die längste Aktivität im Aktivitätblock ist
+                    if($activity['id_aktivitaet'] == getActivityInActivityBlockWithLongestDuration($activity['aktivitaetblock_id'])){
+                        if(!in_array($activityblock, $filledActivityBlocks)){
+                            array_push($filledActivityBlocks, $activityblock);
+                            return TRUE;
+                        }
+                    }
+                }
+            }
+        }
+        return FALSE;
+    }
+
+     //neu: bei dieser Funktion soll die ID der längsten Activity zurückgegeben werden
+     function getActivityInActivityBlockWithLongestDuration($activityblockid){
+        $activities = getAllActivitiesByActivityBlockid($activityblockid);
+        $longestactivityduration;
+        $longestactivity;
+        while($activity = mysqli_fetch_assoc($activities)){
+            $duration = strtotime($activity['endzeit']) - strtotime($activity['startzeit']);
+            if($duration > $longestactivityduration){
+                $longestactivityduration = $duration;
+                $longestactivity = $activity;
+            }
+        }
+        return $longestactivity['id_aktivitaet'];
     }
 
     //Methode um zu prüfen ob eine Aktivität einem Benutzer zugehört
@@ -566,18 +670,36 @@
         ';
         //Wenn die Aktivität eine Viertelstunde oder kürzer dauert
         if(strtotime($endtime) - strtotime($starttime) <= 900){
-            echo '
-                <p class="p_wochenplan_aktivitaet_title" style="font-size: 9pt;">
-                    '.$activityname.'
-                </p>
-            ';
+            if($activityid == 0){
+                echo '
+                    <p class="p_wochenplan_aktivitaet_title" style="font-size: 9pt;">
+                        Aktivitätsblock - '.$activityname.'
+                    </p>
+                ';
+            }
+            else{
+                echo '
+                    <p class="p_wochenplan_aktivitaet_title" style="font-size: 9pt;">
+                        '.$activityname.'
+                    </p>
+                ';
+            }
         }
         else{
-            echo '
-                <p class="p_wochenplan_aktivitaet_title">
-                    '.$activityname.'
-                </p>
-            ';
+            if($activityid == 0){
+                echo '
+                    <p class="p_wochenplan_aktivitaet_title">
+                        Aktivitätsblock - '.$activityname.'
+                    </p>
+                ';
+            }
+            else{
+                echo '
+                    <p class="p_wochenplan_aktivitaet_title">
+                        '.$activityname.'
+                    </p>
+                ';
+            }
         }
         //Wenn die Aktivität kürzer als eine Halbestunde dauert
         if(strtotime($endtime) - strtotime($starttime) > 1800){
@@ -591,6 +713,11 @@
                     </div>
                 </button>
                 <input type="hidden" name="id" value="'.$activityid.'">
+                ';
+                if($activityid == 0){
+                    echo '<input type="hidden" name="name" value="'.$activityname.'">';
+                }
+                echo'
             </form>
         ';
     }

@@ -878,6 +878,58 @@
         $preparedquery->execute();
         $db->close();
     }
+
+    //neu
+    function getNotWrittenInActivity($activityid){
+        $db = getDatabase();
+        $sql = ("SELECT * FROM AKTIVITAET WHERE id_aktivitaet = '$activityid'");
+        $result = $db->query($sql);
+        $resultarray = mysqli_fetch_assoc($result);
+        $db->close();
+        return $resultarray;
+    }
+
+    function getNameOfNotWrittenInActivityBlock($activityid){
+        $db = getDatabase();
+        $sql = ("SELECT ab.name as aktivitaetblock_name FROM AKTIVITAET AS a JOIN AKTIVITAETBLOCK AS ab ON ab.id_aktivitaetblock = a.aktivitaetblock_id WHERE id_aktivitaet = '$activityid'");
+        $result = $db->query($sql);
+        $resultarray = mysqli_fetch_assoc($result);
+        $db->close();
+        return $resultarray['aktivitaetblock_name'];
+    }
+
+    function getAllActivitiesByActivityBlockid($activityblockid){
+        $db = getDatabase();
+        $sql = ("SELECT * FROM `aktivitaet` WHERE aktivitaetblock_id = '$activityblockid'");
+        $result = $db->query($sql);
+        $db->close();
+        return $result;
+    }
+
+    function getAllActivitiesInActivityBlockByName($activityblockname){
+        $db = getDatabase();
+        $sql = ("SELECT * FROM `aktivitaet` WHERE aktivitaetblock_id = (SELECT id_aktivitaetblock FROM aktivitaetblock where name = '$activityblockname')");
+        $result = $db->query($sql);
+        $db->close();
+        return $result;
+    }
+
+    function getActivityBlockByActivityid($activityid){
+        $db = getDatabase();
+        $sql = ("SELECT aktivitaetblock_id FROM `aktivitaet` WHERE id_aktivitaet = '$activityid'");
+        $result = $db->query($sql);
+        $resultarray = mysqli_fetch_assoc($result);
+        $db->close();
+        return $resultarray['aktivitaetblock_id'];
+    }
+
+    function getActivityByActivityBlockidAndUserid($activityblockid, $userid){
+        $db = getDatabase();
+        $sql = ("SELECT * FROM aktivitaet as a JOIN einschreiben as e on e.aktivitaet_id = a.id_aktivitaet WHERE a.aktivitaetblock_id = '$activityblockid' AND e.benutzer_id = '$userid'");
+        $result = $db->query($sql);
+        $db->close();
+        return $result;
+    }
     
     function resetJumpin(){
         $db = getDatabase();
