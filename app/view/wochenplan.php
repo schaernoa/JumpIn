@@ -72,7 +72,8 @@
     }
     //Globale Variablen
     global $daylistcolumns, $daylisttime, $nowline, $colors, $activityclasses, $filledActivityBlocks;
-    $colors = array("286DA8", "CD5360", "67C06B", "438496", "9B7E84", "A895E2", "B37D4E", "780CE8", "E8880C", "362866", "664222", "0D375B", "802731", "A35971", "EC9B24", "009B32", "4A6068", "4E383D", "8E3306", "867A4A");
+    $colors = array(4 => "286DA8", 1 => "CD5360", 5 => "B37D4E", 6 => "438496", 5 => "A895E2", 2 => "780CE8", 12 => "E8880C", 9 => "9B7E84", 11 => "67C06B", 8 => "362866", 10 => "664222", 13 => "0D375B");
+    //"802731", "A35971", "EC9B24", "009B32", "4A6068", "4E383D", "8E3306", "867A4A"
     $nowline = false;
     $daylistcolumns = array();
     $daylisttime = array();
@@ -661,11 +662,11 @@
 
     //Methode um eine Aktivität auszugeben
     //Alle Parameter sind Eigenschaftebn eines Aktivität Objektes die benötigt werden um Sie auszugeben
-    function echoActivity($starttime, $endtime, $activityid, $activityname, $containerheight, $containerwidth, $left, $top, $backgoundcolor){
-        global $colors, $activityclasses;
+    function echoActivity($starttime, $endtime, $activityid, $activityname, $containerheight, $containerwidth, $left, $top, $backgroundcolor){
+        global $colors;
         echo '
             <form action="wochenplan_view" method="post">
-                <button class="button_wochenplan" style="'.$containerheight.' '.$containerwidth.' '.$left.' '.$top.' background-color: #'.$colors[array_search($backgoundcolor, $activityclasses)].';">
+                <button class="button_wochenplan" style="'.$containerheight.' '.$containerwidth.' '.$left.' '.$top.' background-color: #'.$colors[$backgroundcolor].';">
                     <div class="div_wochenplan_aktivitaet">
         ';
         //Wenn die Aktivität eine Viertelstunde oder kürzer dauert
