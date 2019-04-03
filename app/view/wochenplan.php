@@ -71,9 +71,13 @@
         }
     }
     //Globale Variablen
-    global $daylistcolumns, $daylisttime, $nowline, $colors, $activityclasses, $filledActivityBlocks;
-    $colors = array(4 => "286DA8", 1 => "CD5360", 5 => "B37D4E", 6 => "438496", 5 => "A895E2", 2 => "780CE8", 12 => "E8880C", 9 => "9B7E84", 11 => "67C06B", 8 => "362866", 10 => "664222", 13 => "0D375B");
-    //"802731", "A35971", "EC9B24", "009B32", "4A6068", "4E383D", "8E3306", "867A4A"
+    global $daylistcolumns, $daylisttime, $nowline, $colors, $activityclasses, $filledActivityBlocks, $bordercolors;
+    $colors = array(1 => "B15559", 2 => "8D815D", 4 => "E6635A",  5 => "D154AF", 6 => "338A86", 7 => "8D815D", 9 => "3391B9", 10 => "33ABA5", 11 => "8D815D", 12 => "336D91", 13 => "755A93");
+    //100% Post-Farben
+    //1 => "9E2A2F", 2 => "716135", 4 => "F00",  5 => "C52998", 6 => "006D68", 7 => "716135", 9 => "0076A8", 10 => "00968F", 11 => "716135", 12 => "004976", 13 => "523178"
+    //60% Post-Farben
+    //1 => "C57F82", 2 => "AAA086", 4 => "EC8A83",  5 => "DC7FC3", 6 => "66A7A4", 7 => "AAA086", 9 => "66ADCB", 10 => "66C0BC", 11 => "AAA086", 12 => "6692AD", 13 => "9783AE"
+    $bordercolors = array("FC0", "0F0", "000", "00F");
     $nowline = false;
     $daylistcolumns = array();
     $daylisttime = array();
@@ -162,7 +166,9 @@
                 $number++;
                 $faktor = 0;
             }
-            //neu: Platzhalter für nicht eingeschriebene Activities
+            //neu: Platzhalter für nicht eingeschriebene Activities, ganz normales Activity Objekt mit folgenden Attributen:
+            //Enthält als Name den Titel vom Aktivitätsblock
+            //Enthält AktivitätsID = 0, da keine Aktivität den Index 0 haben kann --> alle Aktivitäten mit ID 0 sind also Platzhalter für Aktivitätsblöcke
             else if(notWrittenInYet($activity, $userid)){
                 if($activitybefore != NULL){
                     //Wenn es nicht derselbe Tag wie der der Aktivität zuvor ist
@@ -224,7 +230,10 @@
         }
     }
 
-    //neu: bei dieser Funktion soll Blockname angezeigt werden
+    //neu: bei dieser Funktion soll geprüft werden, ob die vom Benutzer noch nicht eingeschriebene Activity die längste ihres Activityblocks ist
+    //--> Für Platzhalter
+    //$activity ist die aktuelle Aktivität
+    //$userid ist der aktuelle Benutzer
     function notWrittenInYet($activity, $userid){
         //Wenn es eine Aktivität zum einschreiben ist
         if($activity['aktivitaetblock_id'] != NULL){
@@ -253,7 +262,8 @@
         return FALSE;
     }
 
-     //neu: bei dieser Funktion soll die ID der längsten Activity zurückgegeben werden
+     //neu: bei dieser Funktion soll die ID der längsten Activity eines ActivityBlocks zurückgegeben werden
+     //$activityblockid: AktivitätblockID der aktuellen Aktivität
      function getActivityInActivityBlockWithLongestDuration($activityblockid){
         $activities = getAllActivitiesByActivityBlockid($activityblockid);
         $longestactivityduration;
@@ -663,65 +673,131 @@
     //Methode um eine Aktivität auszugeben
     //Alle Parameter sind Eigenschaftebn eines Aktivität Objektes die benötigt werden um Sie auszugeben
     function echoActivity($starttime, $endtime, $activityid, $activityname, $containerheight, $containerwidth, $left, $top, $backgroundcolor){
+        echoFormTag($activityid, $starttime, $activityname);
+        echoButton($containerheight, $containerwidth, $left, $top, $backgroundcolor, $activityid, $starttime, $activityname);
+        echoTitle($starttime, $endtime, $activityid, $activityname);
+        echoTime($starttime, $endtime, $activityid, $activityname);
+    }
+
+
+    //neu:
+    function linkToEinschreiben($activityid, $starttime, $activityblockname){
+        if($activityid == 0){
+            if(strtotime(date("Y-m-d H:i:s")) - strtotime(getEinschreibezeitOfActivityBlockByActivityBlockname($activityblockname)) >= 0){
+                if(strtotime($starttime) - strtotime(date("Y-m-d H:i:s")) >= 0){
+                    return TRUE;
+                }
+            }
+        }
+        return FALSE;
+    }
+
+    function writeInStatus($activityid, $starttime, $activityname){
+        $userid = getUserIDByUsername($_SESSION['benutzer_app']);
+        $writtenin = getWrittenIn($userid, $activityid);
+        if($activityid == 0){
+            if(strtotime(date("Y-m-d H:i:s")) - strtotime(getEinschreibezeitOfActivityBlockByActivityBlockname($activityblockname)) >= 0){
+                if(strtotime($starttime) - strtotime(date("Y-m-d H:i:s")) >= 0){
+                    return 2;
+                }
+                else{
+                    return 3;
+                }
+            }
+            return 4;
+        }
+        else if($writtenin['aktivitaet_id'] == $activityid){
+            return 1;
+        }
+        return 0;
+    }
+
+    function echoFormTag($activityid, $starttime, $activityname){
+        if(linkToEinschreiben($activityid, $starttime, $activityname)){
+            echo '
+                <form action="einschreiben_choice_aktivitaeten" method="post">
+                    <input type="hidden" name="id_aktivitaetsblock" value="'.getIdByActivityblockname($activityname).'">
+                ';
+        }
+        else{
+            echo '
+                <form action="wochenplan_view" method="post">';
+        }
+        if($activityid == 0){
+            echo '<input type="hidden" name="name" value="'.$activityname.'">';
+        }
+        echo '<input type="hidden" name="id" value="'.$activityid.'">';
+    }
+
+    function echoButton($containerheight, $containerwidth, $left, $top, $backgroundcolor, $activityid, $starttime, $activityname){
         global $colors;
+        global $bordercolors;
         echo '
-            <form action="wochenplan_view" method="post">
-                <button class="button_wochenplan" style="'.$containerheight.' '.$containerwidth.' '.$left.' '.$top.' background-color: #'.$colors[$backgroundcolor].';">
-                    <div class="div_wochenplan_aktivitaet">
-        ';
+            <button class="button_wochenplan" style="'.$containerheight.' '.$containerwidth.' '.$left.' '.$top.' background-color: #'.$colors[$backgroundcolor].';">
+                <div class="div_wochenplan_aktivitaet">';
+    }
+
+    function echoTitle($starttime, $endtime, $activityid, $activityname){
         //Wenn die Aktivität eine Viertelstunde oder kürzer dauert
         if(strtotime($endtime) - strtotime($starttime) <= 900){
+            echo '
+                <p class="p_wochenplan_aktivitaet_title" style="font-size: 9pt;">';
             if($activityid == 0){
-                echo '
-                    <p class="p_wochenplan_aktivitaet_title" style="font-size: 9pt;">
-                        Aktivitätsblock - '.$activityname.'
-                    </p>
-                ';
-            }
-            else{
-                echo '
-                    <p class="p_wochenplan_aktivitaet_title" style="font-size: 9pt;">
-                        '.$activityname.'
-                    </p>
-                ';
+                        echo 'Aktivitätsblock - ';
             }
         }
         else{
+            echo '
+                <p class="p_wochenplan_aktivitaet_title">';
             if($activityid == 0){
-                echo '
-                    <p class="p_wochenplan_aktivitaet_title">
-                        Aktivitätsblock - '.$activityname.'
-                    </p>
-                ';
-            }
-            else{
-                echo '
-                    <p class="p_wochenplan_aktivitaet_title">
-                        '.$activityname.'
-                    </p>
-                ';
+                echo 'Aktivitätsblock - ';
             }
         }
+        echo ''.$activityname.'</p>';
+    }
+
+    function echoTime($starttime, $endtime, $activityid, $activityname){
         //Wenn die Aktivität kürzer als eine Halbestunde dauert
         if(strtotime($endtime) - strtotime($starttime) > 1800){
             echo '
-                <p class="p_wochenplan_aktivitaet_time">
-                    '.getHours($starttime).'- '.getHours($endtime).'
-                </p>
+                <p class="p_wochenplan_aktivitaet_time"
+                >'.getHours($starttime).'- '.getHours($endtime).'';
+            $status = writeInStatus($activityid, $starttime, $activityname);
+            echoAdditionalInfo($status);
+            echo '</p>
             ';
         }
         echo '
-                    </div>
-                </button>
-                <input type="hidden" name="id" value="'.$activityid.'">
-                ';
-                if($activityid == 0){
-                    echo '<input type="hidden" name="name" value="'.$activityname.'">';
-                }
-                echo'
+                </div>
+            </button>
+            ';
+        echo'
             </form>
         ';
     }
+
+    function echoAdditionalInfo($status){
+        if($status != 0){
+            //Alternative Farbe #ffeb99
+            echo ' <span style="color: #FC0;">- ';
+            switch ($status) {
+                case 1:
+                    echo 'eingeschrieben ✔️';
+                    break;
+                case 2:
+                    echo 'Jetzt einschreiben 📑';
+                    break;
+                case 3:
+                    echo 'zu spät ❌';
+                    break;
+                case 4:
+                    echo 'zu früh ⏰';
+                    break;
+            }
+            echo '</span>';
+        }
+    }
+
 
     //Methode um die Jetzt-Linie auszugeben, welche im Wochenplan anzeigt wo man sich gerade befindet
     //$daylisttime: die ultimative Liste ohne Spalten

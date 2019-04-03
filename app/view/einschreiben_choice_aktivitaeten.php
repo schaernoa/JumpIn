@@ -12,6 +12,14 @@
         $_SESSION['id_aktivitaetsblock'] = $id;
     }
     if(!empty($id)){
+        if(!empty($_POST['id'])){
+            if($_POST['id'] == 0){
+                $_SESSION['previous'] = "wochenplan";
+            }
+            else if($_POST['id'] == 1){
+                $_SESSION['previous'] = "choice";
+            }
+        }
         echo '
             <h2>Aktivitäten zum einschreiben</h2>
             <p class="p_untertitel">Hier kannst du dich in eine Aktivität des Aktivitätblockes <b>'.getActivityentityNameByID($id).'</b> einschreiben.</p>

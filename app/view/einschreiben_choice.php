@@ -1,6 +1,6 @@
 <?php
     //Error Session leeren
-    //$_SESSION['error'] = NULL;
+    $_SESSION['error'] = NULL;
     $id;
     
     require_once('error.php');
@@ -34,6 +34,7 @@
                                         <p class="p_section">'.$row1['name'].'</p>
                                     </button>
                                     <input type="hidden" name="id_aktivitaetsblock" value="'.$row1['id_aktivitaetblock'].'">
+                                    <input type="hidden" name="id" value="1">
                                 </form>
                             ';
                             $counter++;

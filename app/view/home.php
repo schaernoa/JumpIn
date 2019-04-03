@@ -2,14 +2,15 @@
     //Error Session leeren
     $_SESSION['error'] = NULL;
     //Error Login Session leeren
-    $_SESSION['error_login'] = null;
+    $_SESSION['error_login'] = NULL;
+    $_SESSION['previous'] = NULL;
     //Wenn der benutzer eingeloggt ist
     if($_SESSION['benutzer_app']){
         
         if($_SESSION['writtenin_success'] == "true"){
             $message = "Erfolgreich eingeschrieben";
             echo "<script type='text/javascript'>alert('$message');</script>";
-            $_SESSION['writtenin_success'] = null;
+            $_SESSION['writtenin_success'] = NULL;
         }
         //Hole alle Aktivitätsarten die momentan etwas einzuschreiben haben
         getWriteinPossebilities('home');

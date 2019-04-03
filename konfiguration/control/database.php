@@ -900,7 +900,7 @@
 
     function getAllActivitiesByActivityBlockid($activityblockid){
         $db = getDatabase();
-        $sql = ("SELECT * FROM `aktivitaet` WHERE aktivitaetblock_id = '$activityblockid'");
+        $sql = ("SELECT * FROM AKTIVITAET WHERE aktivitaetblock_id = '$activityblockid'");
         $result = $db->query($sql);
         $db->close();
         return $result;
@@ -908,7 +908,7 @@
 
     function getAllActivitiesInActivityBlockByName($activityblockname){
         $db = getDatabase();
-        $sql = ("SELECT * FROM `aktivitaet` WHERE aktivitaetblock_id = (SELECT id_aktivitaetblock FROM aktivitaetblock where name = '$activityblockname')");
+        $sql = ("SELECT * FROM AKTIVITAET WHERE aktivitaetblock_id = (SELECT id_aktivitaetblock FROM AKTIVITAETBLOCK where name = '$activityblockname')");
         $result = $db->query($sql);
         $db->close();
         return $result;
@@ -916,7 +916,7 @@
 
     function getActivityBlockByActivityid($activityid){
         $db = getDatabase();
-        $sql = ("SELECT aktivitaetblock_id FROM `aktivitaet` WHERE id_aktivitaet = '$activityid'");
+        $sql = ("SELECT aktivitaetblock_id FROM AKTIVITAET WHERE id_aktivitaet = '$activityid'");
         $result = $db->query($sql);
         $resultarray = mysqli_fetch_assoc($result);
         $db->close();
@@ -925,10 +925,28 @@
 
     function getActivityByActivityBlockidAndUserid($activityblockid, $userid){
         $db = getDatabase();
-        $sql = ("SELECT * FROM aktivitaet as a JOIN einschreiben as e on e.aktivitaet_id = a.id_aktivitaet WHERE a.aktivitaetblock_id = '$activityblockid' AND e.benutzer_id = '$userid'");
+        $sql = ("SELECT * FROM AKTIVITAET as a JOIN EINSCHREIBEN as e on e.aktivitaet_id = a.id_aktivitaet WHERE a.aktivitaetblock_id = '$activityblockid' AND e.benutzer_id = '$userid'");
         $result = $db->query($sql);
         $db->close();
         return $result;
+    }
+
+    function getEinschreibezeitOfActivityBlockByActivityBlockname($activityblockname){
+        $db = getDatabase();
+        $sql = ("SELECT einschreibezeit FROM AKTIVITAETBLOCK WHERE name = '$activityblockname'");
+        $result = $db->query($sql);
+        $resultarray = mysqli_fetch_assoc($result);
+        $db->close();
+        return $resultarray['einschreibezeit'];
+    }
+
+    function getIdByActivityblockname($activityblockname){
+        $db = getDatabase();
+        $sql = ("SELECT id_aktivitaetblock FROM AKTIVITAETBLOCK WHERE name = '$activityblockname'");
+        $result = $db->query($sql);
+        $resultarray = mysqli_fetch_assoc($result);
+        $db->close();
+        return $resultarray['id_aktivitaetblock'];
     }
     
     function resetJumpin(){

@@ -83,7 +83,8 @@
         $blockname = $_POST['name'];
         echo '
             <h2>Aktivitäten</h2>
-            <p class="p_untertitel">Hier siehst du alle Aktivitäten vom Aktivitätsblock - <b>'.$blockname.'</b>, welche dir bald zur Verfügung stehen werden.</p>
+            <p class="p_untertitel">Hier siehst du alle Aktivitäten vom Aktivitätsblock - <b>'.$blockname.'</b>.</p>
+            <p class="p_untertitel">Achtung: Einschreiben zurzeit nicht möglich!</p>
         ';
         $activities = getAllActivitiesInActivityBlockByName($blockname);
         while($row = mysqli_fetch_assoc($activities)){
