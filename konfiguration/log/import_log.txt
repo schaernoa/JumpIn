@@ -1,0 +1,122 @@
+Logs
+
+
+-----------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------
+
+testcoach in Coach
+testwayup in Alle
+testwayup in Informatiker
+Error: no groupID in DB for group:  Informatiker WayUp
+Error: Name: Dimitri : baumed - JnR51j9R
+Error: no groupID in DB for group: Coch
+Error: no groupID in DB for group: all
+weberyo in Informatiker
+Error: no groupID in DB for group: 
+Error: Username already exists: Aaron Beer: beera - JH0anPG2
+
+-----------------------------------------------------------------------
+
+Error: Username already exists: Coach Test: testcoach - 568yJ96w
+Error: Username already exists: WayUp Test: testwayup - Welcome$19
+Error: Name: Dimitri : baumed - B2h7u5T2
+Error: Username already exists: Youri Weber: weberyo - TCIogFn9
+Error: Username already exists: Claudio Lüdi: luedic - zRzwS48c
+Error: Username already exists: Aaron Beer: beera - 0CRon7nS
+
+-----------------------------------------------------------------------
+
+Error: Username already exists: Coach Test: testcoach - f7k7xa7V
+Error: Username already exists: WayUp Test: testwayup - Welcome$19
+Error: Name: Dimitri : baumed - W8vck0De
+Error: Username already exists: Youri Weber: weberyo - 5YD2N2n7
+Error: Username already exists: Claudio Lüdi: luedic - Qce41ZpZ
+Error: Username already exists: Aaron Beer: beera - m28wUt86
+
+-----------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------
+
+-----------------------------------------------------------------------
+
+Error: Username already exists: Coach Test: testcoach - 824u027M
+Error: Username already exists: WayUp Test: testwayup - Welcome$19
+Error: (Name) Dimitri : baumed - 5er80oYp
+Error: Username already exists: Youri Weber: weberyo - 1KPx33gs
+Error: Username already exists: Claudio Lüdi: luedic - Nb8T5u74
+Error: Username already exists: Aaron Beer: beera - NPV0PmOV
+
+-----------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------
+
+Error: (Name) Noah : schaernoa - H1uQFH27
+
+-----------------------------------------------------------------------
+
+Error: (Name) Noah : schaernoa - 0g7hUC5q
+
+-----------------------------------------------------------------------
+
+Error: (Name) Noah : schaernoa - PZdpwJi3
+
+-----------------------------------------------------------------------
+
+schaernoa in Alle
+schaernoa in Informatiker
+schaernoa in Informatiker EFZ
+
+-----------------------------------------------------------------------
+
+schaernoa1 in Alle
+schaernoa1 in Informatiker
+schaernoa1 in Informatiker EFZ
+
+-----------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------
+
+Error: Username already exists: Coach Test: testcoach - kf2Jsxws
+Error: Username already exists: WayUp Test: testwayup - Welcome$19
+Error: (Name) Dimitri : baumed - 8dnBw7nv
+Error: Username already exists: Youri Weber: weberyo - 06IlqH84
+Error: Username already exists: Claudio LÃ¼di: luedic - 7mi468IN
+Error: Username already exists: Aaron Beer: beera - 5M03n73Y
+
+-----------------------------------------------------------------------
+
+Error: Username already exists: Coach Test: testcoach - SwiF9o1s
+Error: Username already exists: WayUp Test: testwayup - Welcome$19
+Error: (Name) Dimitri : baumed - aLLal20k
+Error: Username already exists: Youri Weber: weberyo - 774BjB00
+Error: Username already exists: Claudio LÃ¼di: luedic - oGL32M68
+Error: Username already exists: Aaron Beer: beera - 1CksRjbu
+
+--------------------------------------------------------------------
+

@@ -134,6 +134,24 @@ nav{
     margin: 10px auto;
     height: 120px;
 }
+.p_einstellungsbutton{
+    font-family: Frutiger;
+    display: inline-block;
+    margin: 5px 0;
+    font-size: 20pt;
+    font-weight: 900;
+    color: #584125;
+    text-decoration: none;
+}
+.btn_einstellungsbox{
+    width: 240px;
+    height: 240px;
+    background-color: white;
+    margin: 25px;
+    border: 1px solid #584125;
+    text-align: center;
+    cursor: pointer;
+}
 .p_einstellungsbox{
     display: inline-block;
     margin: 5px 0;
@@ -159,6 +177,14 @@ nav{
     font-size: 25pt;
     font-weight: 900;
     color: #584125;
+}
+
+.p_form_username{
+    margin: 20px 0 0 20px;
+    font-weight: 900;
+    color: #584125;
+    font-style:italic;
+    font-size:12pt;
 }
 .p_form_comment{
     margin: 0 0 10px 20px;
@@ -303,6 +329,21 @@ label{
     background-color: #ebe4d1;
     color: #584125; 
     border: 1px solid #584125;
+}
+.button_file_download{
+    margin: 20px;
+    height: 40px;
+    font-size: 18pt;
+    border-radius: 5px;
+    border: 1px solid #ebe4d1;
+    width:auto;
+    color:#ebe4d1;
+    background-color:#584125;
+}
+.button_file_download:hover{
+    background-color: #ebe4d1;
+    color: #584125;
+    cursor: pointer;
 }
 .div_forms_checkbox{
     margin: 20px 0 0 20px;
@@ -818,4 +859,9 @@ td, th {
     word-wrap:break-word;
     color: #a51728;
     font-weight: 800;
+}
+
+.file_input_csv{
+    margin: 0 10px;
+    width: -webkit-fill-available;
 }

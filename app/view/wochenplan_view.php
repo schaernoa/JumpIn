@@ -10,7 +10,7 @@
     else{
         $aktivitaet = $_SESSION['wochenplan_view_id'];
     }
-    //Wenn die AktivitätID nicht leer ist
+    //Wenn die AktivitätID nicht leer ist und kein Aktivitätsname mitgegeben wurde (Normale Activity, kein Activityblock oder Platzhalter)
     if(!empty($aktivitaet) & empty($_POST['name'])){
         $activity = getActivityByID($aktivitaet);
         echo '
@@ -79,13 +79,26 @@
             </form>
         ';
     }
+    //Wenn die AktivitätID nicht leer ist und der Aktivitätsname mitgegeben wurde (Platzhalter für nicht eingeschriebene Activityblocks)
     else if(!empty($aktivitaet) & !empty($_POST['name'])){
         $blockname = $_POST['name'];
         echo '
             <h2>Aktivitäten</h2>
-            <p class="p_untertitel">Hier siehst du alle Aktivitäten vom Aktivitätsblock - <b>'.$blockname.'</b>.</p>
-            <p class="p_untertitel">Achtung: Einschreiben zurzeit nicht möglich!</p>
-        ';
+            <p class="p_untertitel">Hier siehst du alle Aktivitäten vom Aktivitätsblock - <b>'.$blockname.'</b>.</p>';
+        
+        if(!empty($_POST['warning_code'])){
+            echo '
+                <p class="p_untertitel" style="color:#f00"><b>Achtung: <b>';
+                switch($_POST['warning_code']){
+                    case 3:
+                        echo 'Du kannst dich nicht mehr einschreiben! Die Aktivitäten haben bereits begonnen.';
+                        break;
+                    case 4:
+                        echo 'Du kannst dich erst ab '.getEinschreibezeitOfActivityBlockByActivityBlockname($blockname).' einschreiben.';
+                        break;
+                }
+                echo '</p>';
+        }
         $activities = getAllActivitiesInActivityBlockByName($blockname);
         while($row = mysqli_fetch_assoc($activities)){
             //Wenn die Startzeit der Aktivität nicht Vergangenheit ist und sich der Benutzer nicht eingeschrieben hat

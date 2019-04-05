@@ -2,6 +2,11 @@
     <?php
         //Error Session leeren
         $_SESSION['error'] = NULL;
+        if($_SESSION['no_file'] == 1){
+            $alert = "Kein Valides File ausgewählt";
+            echo "<script type='text/javascript'>alert('$alert');</script>";
+        }
+        $_SESSION['url'] = NULL;
         //Stack ausgeben
         echo '<p id="p_stack">'.$_SESSION['stack'].'</p>';
     ?>
@@ -22,6 +27,15 @@
                 </p>
             </div>
         </a>
+        <form action="validate_user_import" method="post" enctype="multipart/form-data">
+            <button type="submit" class="btn_einstellungsbox">
+                <img class="img_einstellungsbox" src="./image/import.png" alt="benutzer/import">
+                <p class="p_einstellungsbutton">
+                    Benutzer importieren
+                </p>
+            <input type="file" name="csv_file" class="file_input_csv" accept=".csv">
+            </button>
+        </form>
     </div>
     <form action="stack" method="post">
         <input class="button_zurück_stack" type="submit" name="submit_btn" value="Zurück">

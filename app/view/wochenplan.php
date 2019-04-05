@@ -71,13 +71,12 @@
         }
     }
     //Globale Variablen
-    global $daylistcolumns, $daylisttime, $nowline, $colors, $activityclasses, $filledActivityBlocks, $bordercolors;
-    $colors = array(1 => "B15559", 2 => "8D815D", 4 => "E6635A",  5 => "D154AF", 6 => "338A86", 7 => "8D815D", 9 => "3391B9", 10 => "33ABA5", 11 => "8D815D", 12 => "336D91", 13 => "755A93");
+    global $daylistcolumns, $daylisttime, $nowline, $colors, $activityclasses, $filledActivityBlocks;
     //100% Post-Farben
     //1 => "9E2A2F", 2 => "716135", 4 => "F00",  5 => "C52998", 6 => "006D68", 7 => "716135", 9 => "0076A8", 10 => "00968F", 11 => "716135", 12 => "004976", 13 => "523178"
     //60% Post-Farben
     //1 => "C57F82", 2 => "AAA086", 4 => "EC8A83",  5 => "DC7FC3", 6 => "66A7A4", 7 => "AAA086", 9 => "66ADCB", 10 => "66C0BC", 11 => "AAA086", 12 => "6692AD", 13 => "9783AE"
-    $bordercolors = array("FC0", "0F0", "000", "00F");
+    $colors = array(1 => "B15559", 2 => "8D815D", 4 => "E6635A",  5 => "D154AF", 6 => "338A86", 7 => "8D815D", 9 => "3391B9", 10 => "33ABA5", 11 => "8D815D", 12 => "336D91", 13 => "755A93");
     $nowline = false;
     $daylistcolumns = array();
     $daylisttime = array();
@@ -698,13 +697,17 @@
         if($activityid == 0){
             if(strtotime(date("Y-m-d H:i:s")) - strtotime(getEinschreibezeitOfActivityBlockByActivityBlockname($activityblockname)) >= 0){
                 if(strtotime($starttime) - strtotime(date("Y-m-d H:i:s")) >= 0){
-                    return 2;
+                    if(linkToEinschreiben($activityid, $starttime, $activityname)){
+                        return 2;
+                    }
+                    else{
+                        return 4;
+                    }
                 }
                 else{
                     return 3;
                 }
             }
-            return 4;
         }
         else if($writtenin['aktivitaet_id'] == $activityid){
             return 1;
@@ -715,7 +718,7 @@
     function echoFormTag($activityid, $starttime, $activityname){
         if(linkToEinschreiben($activityid, $starttime, $activityname)){
             echo '
-                <form action="einschreiben_choice_aktivitaeten" method="post">
+                <form id="einschreiben_form" action="einschreiben_choice_aktivitaeten" method="post">
                     <input type="hidden" name="id_aktivitaetsblock" value="'.getIdByActivityblockname($activityname).'">
                 ';
         }
@@ -731,10 +734,14 @@
 
     function echoButton($containerheight, $containerwidth, $left, $top, $backgroundcolor, $activityid, $starttime, $activityname){
         global $colors;
-        global $bordercolors;
         echo '
-            <button class="button_wochenplan" style="'.$containerheight.' '.$containerwidth.' '.$left.' '.$top.' background-color: #'.$colors[$backgroundcolor].';">
-                <div class="div_wochenplan_aktivitaet">';
+            <button ';
+
+        if(linkToEinschreiben($activityid, $starttime, $activityname)){
+            echo 'onClick="beforeSubmit()" ';
+        }
+        echo 'class="button_wochenplan" style="'.$containerheight.' '.$containerwidth.' '.$left.' '.$top.' background-color: #'.$colors[$backgroundcolor].';">
+            <div class="div_wochenplan_aktivitaet">';
     }
 
     function echoTitle($starttime, $endtime, $activityid, $activityname){
@@ -771,7 +778,8 @@
                 </div>
             </button>
             ';
-        echo'
+        echoAdditionalInputHide($status);
+        echo '
             </form>
         ';
     }
@@ -785,18 +793,25 @@
                     echo 'eingeschrieben ✔️';
                     break;
                 case 2:
-                    echo 'Jetzt einschreiben 📑';
+                    echo 'jetzt einschreiben ✒️';
                     break;
                 case 3:
                     echo 'zu spät ❌';
                     break;
                 case 4:
-                    echo 'zu früh ⏰';
+                    echo 'bald verfügbar ⏰';
                     break;
             }
             echo '</span>';
         }
     }
+
+    function echoAdditionalInputHide($status){
+        if($status != 0){
+            echo '<input type="hidden" name="warning_code" value="'.$status.'">';
+        }
+    }
+
 
 
     //Methode um die Jetzt-Linie auszugeben, welche im Wochenplan anzeigt wo man sich gerade befindet
@@ -960,3 +975,13 @@
         ';
     }
 ?>
+<script type="text/javascript">
+    function beforeSubmit(){
+        <?php
+            $array = array();
+            array_push($array, "einschreiben_choice_aktivitaeten", "validate_einschreiben_choice_aktivitaeten");
+            removeSessionInvalid($array);
+        ?>
+        $("#einschreiben_form").submit();
+    }
+</script>

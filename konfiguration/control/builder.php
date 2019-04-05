@@ -2,7 +2,11 @@
 	//Methode für einen bestimmten main abschnitt zu laden
 	//$path ist der pfad des files welches geladen werden soll
     function build($path){
-?>
+		//Nur für ein File, welches kein HTML beinhalten darf
+		if(strpos($path, 'validate_user_file_download') !== false){
+			require_once $path;
+		}
+		?>
         <!DOCTYPE html>
 		<html>
 			<head>
@@ -42,8 +46,11 @@
 								setStack($path);
 							}
 						}
-						//lädt das file hinein
-						require_once $path; 
+						//Für alle, ausser ein File --> PHP Code wird in Main eingebaut
+						if(strpos($path, 'validate_user_file_download') === false){
+							//lädt das file hinein
+							require_once $path;
+						}
 					?> 
 				</main>
 			</body>

@@ -4,7 +4,7 @@
     $id;
     //Hole die richtige AktivitätsblockID. Entweder aus Session oder aus Post
     if(empty($_POST['id_aktivitaetsblock'])){
-        $id = intval($_SESSION['id_aktivitaetsblock']);
+        $id = $_SESSION['id_aktivitaetsblock'];
         $_SESSION['id_aktivitaetsblock'] = $id;
     }
     else{
@@ -12,14 +12,6 @@
         $_SESSION['id_aktivitaetsblock'] = $id;
     }
     if(!empty($id)){
-        if(!empty($_POST['id'])){
-            if($_POST['id'] == 0){
-                $_SESSION['previous'] = "wochenplan";
-            }
-            else if($_POST['id'] == 1){
-                $_SESSION['previous'] = "choice";
-            }
-        }
         echo '
             <h2>Aktivitäten zum einschreiben</h2>
             <p class="p_untertitel">Hier kannst du dich in eine Aktivität des Aktivitätblockes <b>'.getActivityentityNameByID($id).'</b> einschreiben.</p>
@@ -51,7 +43,7 @@
         }
         if($counter == 0){}
         //Wenn es in diesem Aktivitätsblock eine oder mehrere momentan zu einschreibende Aktivitäten hat
-        else if($counter > 0){           
+        else if($counter > 0){
             $array = array();
             array_push($array, "einschreiben", "validate_einschreiben");
             removeSessionInvalid($array);
@@ -61,6 +53,14 @@
                 <input class="button_zurück" type="submit" name="submit_btn" value="Zurück"/>
             </form>
         ';
+        if(!empty($_POST['id'])){
+            if($_POST['id'] == 0){
+                $_SESSION['previous'] = "wochenplan";
+            }
+            else if($_POST['id'] == 1){
+                $_SESSION['previous'] = "choice";
+            }
+        }
     }
     else{
         header('Location: home');

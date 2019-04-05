@@ -220,6 +220,9 @@
 			case 'user_add':
 				build('./view/user_add.php');
 				break;
+			case 'user_import_result':
+				build('./view/user_import_result.php');
+				break;
 			case 'validate_user_add':
 				build('validate_user_add.php');
 				break;
@@ -249,6 +252,12 @@
 				break;
 			case 'validate_user_group_edit':
 				build('validate_user_group_edit.php');
+				break;
+			case 'validate_user_import':
+				build('./control/validate_user_import.php');
+				break;
+			case 'validate_user_file_download':
+				build('./control/validate_user_file_download.php');
 				break;
 
 			case 'group':
