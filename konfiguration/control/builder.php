@@ -2,6 +2,10 @@
 	//Methode für einen bestimmten main abschnitt zu laden
 	//$path ist der pfad des files welches geladen werden soll
     function build($path){
+		//Nur für ein File, welches kein HTML beinhalten darf, da das HTML sonst auch exportiert wird
+		if(strpos($path, 'validate_user_file_download') !== false){
+			require_once $path;
+		}
 		?>
         <!DOCTYPE html>
 		<html>
