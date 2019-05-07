@@ -320,6 +320,21 @@ label{
     background-color: #FFCC00;
     color: #584125; 
 }
+.button_zurück_stack_import{
+    float: left;
+    margin: 90px;
+    height: 40px;
+    width: 130px;
+    font-size: 18pt;
+    border-radius: 5px;
+    background-color: #584125;
+    color: #ebe4d1; 
+    border: 1px solid #584125;
+}
+.button_zurück_stack_import:hover{
+    background-color: #FFCC00;
+    color: #584125; 
+}
 .button_zurück_choice{
     margin: 20px;
     height: 40px;
@@ -461,15 +476,18 @@ td, th {
     background-color: #806f60 !important;
     color: white;
 }
-.button_search{
+.button_search, .button_print{
     margin: 10px 0 20px 30px;
     height: 40px;
-    width: 130px;
     font-size: 18pt;
     border-radius: 5px;
     background-color: #584125;
     color: #ebe4d1; 
     border: 1px solid #584125;
+}
+
+.button_search{
+    width: 130px;
 }
 
 .div_feedback_statistik_answer{

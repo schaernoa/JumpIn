@@ -1,0 +1,15 @@
+header, footer, button, #div_peruser, #p_stack {
+    display: none;
+}
+
+.div_feedback_statistik_antwort {
+    display: none;
+}
+
+.div_feedback_statistik_container, .div_feedback_statistik_frage, .div_feedback_statistik_bemerkungen {
+    border: none;
+}
+
+.div_feedback_statistik_bemerkungen {
+    padding: 0;
+}

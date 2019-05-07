@@ -259,6 +259,9 @@
 			case 'validate_user_file_download':
 				build('./control/validate_user_file_download.php');
 				break;
+			case 'validate_user_newusers_download':
+				build('./control/validate_user_newusers_download.php');
+				break;
 
 			case 'group':
 				build('./view/group.php');

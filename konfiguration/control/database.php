@@ -31,6 +31,15 @@
         return $result; 
     }
 
+    function getTotalNumberOfUsers(){
+        $db = getDatabase();
+        $sql = ("SELECT COUNT(*) AS counted FROM BENUTZER LIMIT 1");
+        $result = $db->query($sql);
+        $resultarray = mysqli_fetch_assoc($result);
+        $db->close();
+        return $resultarray['counted'];
+    }
+
     function getUserIDByUsername($username){
         $db = getDatabase();
         $sql = ("SELECT id_benutzer FROM BENUTZER WHERE benutzername = '$username' LIMIT 1");
@@ -588,6 +597,16 @@
         return $resultarray;
     }
 
+    function getNumberOfAllowedFeedbackUsers() {
+        $db = getDatabase();
+        $sql = ("SELECT count(id_benutzer) as counted FROM BENUTZER as b join BENUTZER_GRUPPE as bg on b.id_benutzer = bg.benutzer_id JOIN GRUPPE as g on bg.gruppe_id = g.id_gruppe WHERE g.id_gruppe = (SELECT id_gruppe FROM gruppe WHERE name = 'Informatiker') or g.id_gruppe = (SELECT id_gruppe FROM gruppe WHERE name = 'Mediamatiker')");
+        $result = $db->query($sql);
+        $resultarray = mysqli_fetch_assoc($result);
+        $resultstring = $resultarray['counted'];
+        $db->close();
+        return $resultstring;
+    }
+
     function getOptionByOptionIDAndFeedbackcategoryID($oid, $fid){
         $db = getDatabase();
         $sql = ("SELECT * FROM OPTIONEN WHERE id_optionen = '$oid' AND feedbackkategorie_id = '$fid'");
@@ -948,6 +967,8 @@
         $db->close();
         return $resultarray['id_aktivitaetblock'];
     }
+
+
     
     function resetJumpin(){
         $db = getDatabase();

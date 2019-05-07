@@ -2,16 +2,13 @@
 	//Methode für einen bestimmten main abschnitt zu laden
 	//$path ist der pfad des files welches geladen werden soll
     function build($path){
-		//Nur für ein File, welches kein HTML beinhalten darf
-		if(strpos($path, 'validate_user_file_download') !== false){
-			require_once $path;
-		}
 		?>
         <!DOCTYPE html>
 		<html>
 			<head>
 				<title>Jump-In Konfiguration</title>
 				<link rel="stylesheet" href="./css/style.css">
+				<link rel="stylesheet" type="text/css" media="print" href="./css/print.css"/>
 				<link rel="icon" href="../favicon.ico" type="image/x-icon"/>
 				<meta charset="UTF-8">
 				<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>

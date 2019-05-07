@@ -2,9 +2,9 @@
     <?php
         //Error Session leeren
         $_SESSION['error'] = NULL;
+        $_SESSION['users_added'] = 'done';
         //Stack ausgeben
         echo '<p id="p_stack">'.$_SESSION['stack'].'</p>';
-        $_SESSION['url'] = "show_results";
     ?>
     <div class="div_form">
         <p class="p_form_title">

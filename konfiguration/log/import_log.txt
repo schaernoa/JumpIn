@@ -120,3 +120,743 @@ Error: Username already exists: Aaron Beer: beera - 1CksRjbu
 
 --------------------------------------------------------------------
 
+
+--------------------------------------------------------------------
+
+
+--------------------------------------------------------------------
+
+tester27 in Alle
+tester27 in Informatiker
+
+--------------------------------------------------------------------
+
+Error: Username already exists: Test27 Test 27: tester27 - rDPx830U
+
+--------------------------------------------------------------------
+
+Error: Username already exists: Aaron Beer: beera - 2abdQ3BL
+Error: Username already exists: Noah Schär: schaernoa - Welcome$19
+Error: (Username)  :  - n101wFac
+Error: (Username)  :  - mULyBUD5
+Error: (Username)  :  - y9WH9tt7
+Error: (Username)  :  - nd7yLc35
+
+-----------------------------------------
+
+
+-----------------------------------------
+
+
+-----------------------------------------
+
+zbindenv in Alle
+zbindenv in Informatiker
+zbindenv in Informatiker EFZ
+
+-----------------------------------------
+
+
+-----------------------------------------
+
+
+-----------------------------------------
+
+Error: Username already exists: Aaron Beer: beera - H2r53cU6
+Error: Username already exists: Noah Schär: schaernoa - Welcome$19
+Error: (Username)  :  - t6VYDzfH
+Error: (Username)  :  - O3NDf0qo
+Error: (Username)  :  - 79JZfCWj
+Error: (Username)  :  - Wr6o4V6C
+
+-----------------------------------------
+
+Error: Username already exists: Aaron Beer: beera - xDAvb1Pe
+Error: Username already exists: Noah Schär: schaernoa - Welcome$19
+Error: (Username)  :  - l4QTOit1
+Error: (Username)  :  - skUKWF33
+Error: (Username)  :  - C57GX20x
+Error: (Username)  :  - Z5sz1liV
+
+-----------------------------------------
+
+Error: Username already exists: Aaron Beer: beera - nM6U54qE
+Error: Username already exists: Noah Schär: schaernoa - Welcome$19
+Error: (Username)  :  - 4BlrH706
+Error: (Username)  :  - 5ucujW2Q
+Error: (Username)  :  - s8sGNqZI
+Error: (Username)  :  - g6p4o10B
+
+-----------------------------------------
+
+Error: Username already exists: Aaron Beer: beera - 1x93B5Ta
+Error: Username already exists: Noah Schär: schaernoa - Welcome$19
+Error: (Username)  :  - TjPPi49K
+Error: (Username)  :  - RC3VHBYv
+Error: (Username)  :  - GohHlAa6
+Error: (Username)  :  - HUm1PobR
+
+-----------------------------------------
+
+Error: Username already exists: Aaron Beer: beera - dAIsk5D2
+Error: Username already exists: Noah Schär: schaernoa - Welcome$19
+Error: (Username)  :  - r1Q4SZVL
+Error: (Username)  :  - BUOxIT9x
+Error: (Username)  :  - 3Gjd3y2r
+Error: (Username)  :  - P2X37s9l
+
+-----------------------------------------
+
+Error: Username already exists: Aaron Beer: beera - GjjXNpJ5
+Error: Username already exists: Noah Schär: schaernoa - Welcome$19
+Error: (Username)  :  - Raw34Fx8
+Error: (Username)  :  - d7uAF6T9
+Error: (Username)  :  - 9938cz5I
+Error: (Username)  :  - 0wS5Zhzw
+
+-----------------------------------------
+
+Error: Username already exists: Aaron Beer: beera - 80732d2X
+Error: Username already exists: Noah Schär: schaernoa - Welcome$19
+Error: (Username)  :  - 8I353o2x
+Error: (Username)  :  - m9Di4bBD
+Error: (Username)  :  - XCOchhW6
+Error: (Username)  :  - oNTR1lmm
+
+-----------------------------------------
+
+Error: Username already exists: Aaron Beer: beera - Ry244N5O
+Error: Username already exists: Noah Schär: schaernoa - Welcome$19
+Error: (Username)  :  - Imz20t0l
+Error: (Username)  :  - i59DwuVP
+Error: (Username)  :  - f3CyHLYp
+Error: (Username)  :  - aCxBuNG1
+
+-----------------------------------------
+
+Error: Username already exists: Aaron Beer: beera - 9TR8A6mR
+Error: Username already exists: Noah Schär: schaernoa - Welcome$19
+Error: (Username)  :  - FEBtplm4
+Error: (Username)  :  - nu28nt0Y
+Error: (Username)  :  - 51eayGi2
+Error: (Username)  :  - 5L8597f4
+
+-----------------------------------------
+
+Error: Username already exists: Aaron Beer: beera - l44ir3gF
+Error: Username already exists: Noah Schär: schaernoa - Welcome$19
+Error: (Username)  :  - 45y9EyiB
+Error: (Username)  :  - R4uJM55r
+Error: (Username)  :  - Vgp7c1Dx
+Error: (Username)  :  - c9B9jclH
+
+-----------------------------------------
+
+Error: Username already exists: Aaron Beer: beera - 1r67yOF4
+Error: Username already exists: Noah Schär: schaernoa - Welcome$19
+Error: (Username)  :  - Z7TNIH2g
+Error: (Username)  :  - dF64Xn24
+Error: (Username)  :  - xpeUyt57
+Error: (Username)  :  - 3x5J4q2H
+
+-----------------------------------------
+
+Error: Username already exists: Aaron Beer: beera - Sg740l8E
+Error: Username already exists: Noah Schär: schaernoa - Welcome$19
+Error: (Username)  :  - V386zcw0
+Error: (Username)  :  - o0G2VF6r
+Error: (Username)  :  - xF1Rb8f5
+Error: (Username)  :  - fD5krxiq
+
+-----------------------------------------
+
+Error: Username already exists: Aaron Beer: beera - fV5T9z2t
+Error: Username already exists: Noah Schär: schaernoa - Welcome$19
+Error: (Username)  :  - QBcK6z8X
+Error: (Username)  :  - ply0CT9N
+Error: (Username)  :  - JR9H3k2U
+Error: (Username)  :  - 3q5AxR8n
+
+-----------------------------------------
+
+Error: Username already exists: Aaron Beer: beera - 2L26k3dm
+Error: Username already exists: Noah Schär: schaernoa - Welcome$19
+Error: (Username)  :  - Z3SY5tF6
+Error: (Username)  :  - EwkW0s6X
+Error: (Username)  :  - PB4Z661l
+Error: (Username)  :  - UW2fsr4q
+
+-----------------------------------------
+
+Error: Username already exists: Aaron Beer: beera - l62SsPEk
+Error: Username already exists: Noah Schär: schaernoa - Welcome$19
+Error: (Username)  :  - BI8ZaOns
+Error: (Username)  :  - K48sB2qp
+Error: (Username)  :  - LyON8359
+Error: (Username)  :  - Ep4Tia3D
+
+-----------------------------------------
+
+Error: Username already exists: Aaron Beer: beera - 10N9zOsY
+Error: Username already exists: Noah Schär: schaernoa - Welcome$19
+Error: (Username)  :  - 3780lhFV
+Error: (Username)  :  - aSLYzF81
+Error: (Username)  :  - 1kb5bsdD
+Error: (Username)  :  - zdUHMX0l
+
+-----------------------------------------
+
+Error: Username already exists: Aaron Beer: beera - t629d7rH
+Error: Username already exists: Noah Schär: schaernoa - Welcome$19
+Error: (Username)  :  - 4VXR50uk
+Error: (Username)  :  - 2zHUtV62
+Error: (Username)  :  - 44OG90y6
+Error: (Username)  :  - 8LhV3Uu5
+
+-----------------------------------------
+
+Error: Username already exists: Aaron Beer: beera - 7CW5u1GO
+Error: Username already exists: Noah Schär: schaernoa - Welcome$19
+Error: (Username)  :  - qR3y73WX
+Error: (Username)  :  - otH2oz74
+Error: (Username)  :  - XE5YN9t1
+Error: (Username)  :  - ipw1ByEk
+
+-----------------------------------------
+
+Error: Username already exists: Aaron Beer: beera - n6oGIS9n
+Error: Username already exists: Noah Schär: schaernoa - Welcome$19
+Error: (Username)  :  - C6Gi79Hi
+Error: (Username)  :  - 4ILjnA9C
+Error: (Username)  :  - t5HCj7f2
+Error: (Username)  :  - MdW86C4Z
+
+-----------------------------------------
+
+Error: Username already exists: Aaron Beer: beera - 2B278FnZ
+Error: Username already exists: Noah Schär: schaernoa - Welcome$19
+Error: (Username)  :  - 9cITm0Bo
+Error: (Username)  :  - Qy1AsmG2
+Error: (Username)  :  - 7BCyURgd
+Error: (Username)  :  - u9XiE30r
+
+-----------------------------------------
+
+Error: Username already exists: Aaron Beer: beera - 6ZN9BRy8
+Error: Username already exists: Noah Schär: schaernoa - Welcome$19
+Error: (Username)  :  - 0I4pIq1s
+Error: (Username)  :  - dc4MWnvX
+Error: (Username)  :  - j25PR3rL
+Error: (Username)  :  - E2EVAkU4
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+Error: Username already exists: Roman Berger: bergerroma - xNk5n3NQ
+
+-----------------------------------------
+
+
+-----------------------------------------
+
+Error: Username already exists: Coach Test: testcoach - 8cvb34uS
+Error: Username already exists: WayUp Test: testwayup - Welcome$19
+testpibs in Alle
+testpibs in Informatiker
+testpibs in Informatiker PiBS
+testefz in Alle
+testefz in Informatiker
+testefz in Informatiker EFZ
+testmediamatiker in Alle
+testmediamatiker in Mediamatiker
+Error: Username already exists: Mediamatiker Test: luedic - DOB1jYIr
+
+-----------------------------------------
+
+Error: Username already exists: Coach Test: testcoach - gu0bl8Ux
+Error: Username already exists: WayUp Test: testwayup - Welcome$19
+Error: Username already exists: PiBS Test: testpibs - TGe94lqm
+Error: Username already exists: EFZ Test: testefz - qvQIR6hQ
+Error: Username already exists: Mediamatiker Test: testmediamatiker - 8LZBV1Qc
+Error: Username already exists: Mediamatiker Test: luedic - M5YuGoNe
+
+-----------------------------------------
+
+Error: Username already exists: Aaron Beer: beera - r4De94Gr
+Error: Username already exists: Noah Schär: schaernoa - Welcome$19
+Error: (Username)  :  - V0BKKFvt
+Error: (Username)  :  - j8ayfRL2
+Error: (Username)  :  - R3za5Yak
+Error: (Username)  :  - 34M89ixc
+
+-----------------------------------------
+
+Error: Username already exists: Roman Berger: bergerroma - mY2nXUmi
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+Error: Username already exists: Roman Berger: bergerroma - 2Pp659GZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+
+-----------------------------------------
+
+
+-----------------------------------------
+
+
+-----------------------------------------
+
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+Error: Username already exists: Roman Berger: bergerroma - 8vbirm1R
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+
+-----------------------------------------
+
+Error: Username already exists: Aaron Beer: beera - NU8bq649
+Error: Username already exists: Noah Schär: schaernoa - Welcome$19
+Error: (Username)  :  - S8Y3F9yQ
+Error: (Username)  :  - 202068bS
+Error: (Username)  :  - resa349W
+Error: (Username)  :  - 2wWAgP2G
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+Error: Username already exists: Coach Test: testcoach - 4iiYar8C
+Error: Username already exists: WayUp Test: testwayup - Welcome$19
+Error: Username already exists: PiBS Test: testpibs - Othjs904
+Error: Username already exists: EFZ Test: testefz - k828zttH
+Error: Username already exists: Mediamatiker Test: testmediamatiker - Zc58hfSA
+luedic in Alle
+luedic in Mediamatiker
+
+-----------------------------------------
+
+Error: Username already exists: Coach Test: testcoach - mCoyo9en
+Error: Username already exists: WayUp Test: testwayup - Welcome$19
+Error: Username already exists: PiBS Test: testpibs - 8nTV290f
+Error: Username already exists: EFZ Test: testefz - 5Lh099Yr
+Error: Username already exists: Mediamatiker Test: testmediamatiker - TK483j6i
+Error: Username already exists: Mediamatiker Test: luedic - 6Y2Rb9D6
+
+-----------------------------------------
+
+Error: Username already exists: Coach Test: testcoach - o0bfWJ4V
+Error: Username already exists: WayUp Test: testwayup - Welcome$19
+Error: Username already exists: PiBS Test: testpibs - A3ig788T
+Error: Username already exists: EFZ Test: testefz - 5n5tRCJH
+Error: Username already exists: Mediamatiker Test: testmediamatiker - 8Fet9LlA
+Error: Username already exists: Mediamatiker Test: luedic - 5wGAcft1
+
+-----------------------------------------
+
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+Error: Username already exists: Roman Berger: bergerroma - 2Zh7hTAD
+
+-----------------------------------------
+
+
+-----------------------------------------
+
+
+-----------------------------------------
+
+Error: Username already exists: Roman Berger: bergerroma - k726yGxL
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+Error: Username already exists: Roman Berger: bergerroma - 96UQ37Vo
+
+-----------------------------------------
+
+
+-----------------------------------------
+
+
+-----------------------------------------
+
+
+-----------------------------------------
+
+
+-----------------------------------------
+
+
+-----------------------------------------
+
+
+-----------------------------------------
+
+
+-----------------------------------------
+
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+Error: Username already exists: Coach Test: testcoach - 15061Zc8
+Error: Username already exists: WayUp Test: testwayup - Welcome$19
+Error: Username already exists: PiBS Test: testpibs - 2KyGV67H
+Error: Username already exists: EFZ Test: testefz - 21C7aaPY
+Error: Username already exists: Mediamatiker Test: testmediamatiker - 4Gy4GqK2
+Error: Username already exists: Mediamatiker Test: luedic - w7P71OuF
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
+
+-----------------------------------------
+
+Error: Username already exists: Roman Berger: bergerroma - O9j6QR31
+
+-----------------------------------------
+
+bergerroma in Alle
+bergerroma in Informatiker
+bergerroma in Informatiker EFZ
