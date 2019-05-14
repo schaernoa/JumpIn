@@ -20,8 +20,8 @@
                 //Spaltentitel entfernen (Wenn keine Titel vorhanden --> Zeile auskommentieren)
                 $row = fgetcsv($input, 1024, ';');
                 //Logfiles instanzieren
-                $logfile = './log/import_log.txt';
-                $usersfile = './log/newusers_log.txt';
+                $logfile = '../../.././jumpin_log/import_log.txt';
+                $usersfile = '../../.././jumpin_log/newusers_log.txt';
         
                 prepareLogfiles($logfile, $usersfile);
         
