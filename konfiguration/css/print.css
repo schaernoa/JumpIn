@@ -13,3 +13,7 @@ header, footer, button, #div_peruser, #p_stack {
 .div_feedback_statistik_bemerkungen {
     padding: 0;
 }
+
+html{
+    zoom: 60%;
+}

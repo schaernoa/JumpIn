@@ -385,6 +385,42 @@
         return $result;
     }
 
+    function getAverageOptionIDByFeedbackCategoryID($fid){
+        $db = getDatabase();
+        $sql = ("SELECT AVG(optionen_id) as durchschnitt FROM FEEDBACKBOGEN WHERE feedbackkategorie_id = '$fid' ");
+        $result = $db->query($sql);
+        $resultarray = mysqli_fetch_assoc($result);
+        $db->close();
+        return $resultarray['durchschnitt'];
+    }
+
+    function getLowestIDOfOptionIDByFeedbackCategoryID($fid){
+        $db = getDatabase();
+        $sql = ("SELECT MIN(id_optionen) as minimum FROM OPTIONEN WHERE feedbackkategorie_id = '.$fid.'");
+        $result = $db->query($sql);
+        $resultarray = mysqli_fetch_assoc($result);
+        $db->close();
+        return $resultarray['minimum'];
+    }
+
+    function getHighestIDOfOptionIDByFeedbackCategoryID($fid){
+        $db = getDatabase();
+        $sql = ("SELECT MAX(id_optionen) as maximum FROM OPTIONEN WHERE feedbackkategorie_id = '.$fid.'");
+        $result = $db->query($sql);
+        $resultarray = mysqli_fetch_assoc($result);
+        $db->close();
+        return $resultarray['maximum'];
+    }
+
+    function getAnswerByOptionID($oid){
+        $db = getDatabase();
+        $sql = ("SELECT antwort FROM OPTIONEN WHERE id_optionen = '$oid' ");
+        $result = $db->query($sql);
+        $resultarray = mysqli_fetch_assoc($result);
+        $db->close();
+        return $resultarray['antwort'];
+    }
+
     function getUserFeedbackByOptionIDAndFeedbackCategoryID($oid, $fid){
         $db = getDatabase();
         $sql = ("SELECT * FROM FEEDBACKBOGEN WHERE feedbackkategorie_id = '$fid' AND optionen_id = '$oid'");

@@ -396,9 +396,18 @@ td, th {
     width: 90%;
     border: 1px solid black;
     margin: 0 0 0 20px;
-    font-size: 20pt;
     font-weight: 800;
     word-wrap:break-word;
+}
+
+.p_feedback_statistik_frage{
+    margin: 5px 0 0 0;
+    font-size: 20pt;
+}
+
+.p_feedback_statistik_durchschnitt{
+    margin: 5px 0;
+    font-size: 16pt;
 }
 
 .div_feedback_statistik_container{

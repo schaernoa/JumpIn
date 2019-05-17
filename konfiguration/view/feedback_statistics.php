@@ -20,10 +20,24 @@
                     $answercount = $answers['counted'];
                     //Anzahl berechtigter User holen
                     $allowedUsers = getNumberOfAllowedFeedbackUsers();
+                    //Durchschnittliche Antwort pro Frage
+                    $avgOptionID = getAverageOptionIDByFeedbackCategoryID($row1['id_feedbackkategorie']);
+                    $roundedAvgOptionID = round($avgOptionID);
+                    $avgAnswer = getAnswerByOptionID($roundedAvgOptionID);
+
+                    //Test
+                    $min = getLowestIDOfOptionIDByFeedbackCategoryID($row1['id_feedbackkategorie']);
+                    $max = getHighestIDOfOptionIDByFeedbackCategoryID($row1['id_feedbackkategorie']);
+                    $value = $max-$min+1;
+                    $avgInPercent = (100/$value)*($max-$avgOptionID+1);
+                    $roundedAvgInPercent = round($avgInPercent,1);
+
                     //Die Frage ausgeben
                     echo '
                         <div class="div_feedback_statistik_frage">
-                            '.$row1['frage'].' ('.$answercount.'/'.$allowedUsers.')
+                            <p class="p_feedback_statistik_frage">'.$row1['frage'].' ('.$answercount.'/'.$allowedUsers.')</p>
+                            <p class="p_feedback_statistik_durchschnitt">Durchschnitt: '.$avgAnswer.'</p>
+                            <p class="p_feedback_statistik_durchschnitt">Zufriedenheit: '.$roundedAvgInPercent.'%</p>
                         </div>
                         <div class="div_feedback_statistik_container">
                     ';
