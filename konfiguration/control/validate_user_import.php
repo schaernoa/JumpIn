@@ -296,6 +296,13 @@
 
     function createHtmlElements(){
 
+        var h1 = document.createElement("p");
+        var text = document.createTextNode("Bitte das Dokument speichern, bevor <Weiter> gedrückt wird...");     // Create a text node
+        h1.appendChild(text); 
+        h1.setAttribute('class', 'p_form_title');
+
+        document.body.appendChild(h1);
+
         var form1 = document.createElement("form");
         var input1 = document.createElement("input");
 
@@ -304,7 +311,7 @@
 
         input1.value = "Weiter";
         input1.type = "submit";
-        input1.setAttribute('class', 'button_zurück_stack_import');
+        input1.setAttribute('class', 'button_weiter_import');
         form1.appendChild(input1);
 
         document.body.appendChild(form1);

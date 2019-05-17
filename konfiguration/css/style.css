@@ -320,9 +320,9 @@ label{
     background-color: #FFCC00;
     color: #584125; 
 }
-.button_zurück_stack_import{
+.button_weiter_import{
     float: left;
-    margin: 90px;
+    margin-left: 20px;
     height: 40px;
     width: 130px;
     font-size: 18pt;
@@ -331,7 +331,7 @@ label{
     color: #ebe4d1; 
     border: 1px solid #584125;
 }
-.button_zurück_stack_import:hover{
+.button_weiter_import:hover{
     background-color: #FFCC00;
     color: #584125; 
 }
