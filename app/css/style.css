@@ -283,7 +283,7 @@ tr:nth-child(even){
 }
 .button_weiter{
     float: right;
-    margin: 20px calc(100% - 80% - 20px) 50px 0;
+    margin: 20px calc(100% - 80% - 20px) 20px 0;
     height: 30px;
     width: 90px;
     font-size: 9pt;
@@ -705,7 +705,7 @@ tr:nth-child(even){
 }
 .button_zurück_einschreiben{
     float: left;
-    margin: 10px calc(90% - 200px) 0 20px;
+    margin: 10px calc(90% - 200px) 20px 20px;
     height: 30px;
     width: 90px;
     font-size: 9pt;

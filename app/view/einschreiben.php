@@ -16,6 +16,9 @@
         ';
         //Das Error Element holen um mögliche Fehlermeldungen anzeigen zu können
         require_once('error.php');
+        if($_SESSION['Coach'] == 1){
+            echo '<p class="p_error">Coaches können sich nicht einschreiben!</p>';
+        }
         echo '
             <p class="p_form">Aktivitätsname</p>
             <p class="p_details">
@@ -117,16 +120,19 @@
             <input class="button_zurück_einschreiben" type="submit" name="submit_btn" value="Zurück"/>
         </form>
         ';
-        //Wenn es noch freie Plätze in der Aktivität hat
-        if($anzahlteilnehmer < $maxteilnehmer){
-            echo '
-                <button id="modal_einschreiben_button" class="button_weiter_modal">Einschreiben</button>
-            ';
-        }
-        else{
-            echo '
-                <span id="einschreiben_voll"><p id="p_einschreiben_voll">Aktivität voll</p></span>
-            ';
+        //Wenn der aktuelle User kein Coach ist
+        if($_SESSION['Coach'] != 1){
+            //Wenn es noch freie Plätze in der Aktivität hat
+            if($anzahlteilnehmer < $maxteilnehmer){
+                echo '
+                    <button id="modal_einschreiben_button" class="button_weiter_modal">Einschreiben</button>
+                ';
+            }
+            else{
+                echo '
+                    <p id="p_einschreiben_voll">Aktivität voll</p>
+                ';
+            }
         }
     }
     else{

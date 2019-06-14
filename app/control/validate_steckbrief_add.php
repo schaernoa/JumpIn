@@ -15,8 +15,18 @@
                     $x++;
                     if(!empty($_POST[''.$validate.''])){
                         $steckbrief = htmlspecialchars($_POST[''.$validate.'']);
-                        if(strlen($steckbrief) <= 300){
-                            $y++;
+                        if($validate == "3"){
+                            if(is_numeric($_POST[''.$validate.''])){
+                                if(strlen($steckbrief) <= 300){
+                                    $y++;
+                                }
+                            }
+                            else{$kat = "(Alter) ";}
+                        }
+                        else{
+                            if(strlen($steckbrief) <= 300){
+                                $y++;
+                            }
                         }
                     }
                 }
@@ -51,7 +61,7 @@
                     }
                 }
                 else{
-                    $_SESSION['error'] = "Nicht alle Kategorien im Steckbrief wurden richtig ausgefüllt!";
+                    $_SESSION['error'] = "Nicht alle Kategorien $kat im Steckbrief wurden richtig ausgefüllt!";
                 }
             }
             else{

@@ -14,8 +14,18 @@
                 $x++;
                 if(!empty($_POST[''.$validate.''])){
                     $steckbrief = htmlspecialchars($_POST[''.$validate.'']);
-                    if(strlen($steckbrief) <= 300){
-                        $y++;
+                    if($validate == "3"){
+                        if(is_numeric($_POST[''.$validate.''])){
+                            if(strlen($steckbrief) <= 300){
+                                $y++;
+                            }
+                        }
+                        else{$kat = "(Alter) ";}
+                    }
+                    else{
+                        if(strlen($steckbrief) <= 300){
+                            $y++;
+                        }
                     }
                 }
             }
@@ -23,7 +33,6 @@
             if($x == $y){
                 $urlbild = $_POST['srcbild'];
                 if(!$urlbild == ""){
-
                     $uploaddir = getcwd()."/userimages/";
                     $uploaddir = trim($uploaddir);
                     $filename = getUserIDByUsername($_SESSION['benutzer_app']);
@@ -45,7 +54,7 @@
                 }
             }
             else{
-                $_SESSION['error'] = "Nicht alle Kategorien im Steckbrief wurden richtig ausgefüllt!";
+                $_SESSION['error'] = "Nicht alle Kategorien $kat im Steckbrief wurden richtig ausgefüllt!";
             }
         }
         //Wenn richtig validiert
