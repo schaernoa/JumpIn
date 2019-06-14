@@ -77,7 +77,7 @@ h2{
 }
 
 .a_header_special{
-    background-color: #ebe4d1;
+    background-color: #ebeae6;
 }
 
 .img_header_login{
@@ -87,7 +87,7 @@ h2{
 #div_header_login{
     height: 50px;
     width: 50px;
-    background-color: #584125;
+    /*background-color: #006D68;*/
 }
 #div_header_login:hover{
     background-color: #FFCC00;
@@ -104,7 +104,7 @@ h2{
     cursor: pointer;
 }
 #span_nav_login_open:hover{
-    color: #584125;
+    color: #006D68;
     background-color: #FFCC00;
 }
 #div_header_logout{
@@ -122,7 +122,7 @@ h2{
     height: 50px;
     width: 50px;
     font-size: 35px;
-    color: #584125;
+    color: #006D68;
     background-color: #FFCC00;
     padding-left: 15px;
     cursor: pointer;
@@ -140,7 +140,15 @@ h2{
 .img_header_two{
     position: absolute;
     top: 0;
-    left: 50px; 
+    /* Firefox */
+    left: -moz-calc((100% - 140px)/2);
+    /* WebKit */
+    left: -webkit-calc((100% - 140px)/2);
+    /* Opera */
+    left: -o-calc((100% - 140px)/2);
+    /* Standard */
+    left: calc((100% - 140px)/2);
+
     height: 50px;
 }
 #p_header_login{
@@ -159,7 +167,7 @@ h2{
     margin: 15px 0 0 20px;
     font-size: 10pt;
     font-weight: 900;
-    color: #584125;
+    color: #000000;
     text-align: left;
 }
 .forms_login{
@@ -167,14 +175,14 @@ h2{
     width: 80%;
     margin: 0 0 10px 20px;
     font-size: 12pt;
-    background: #f5f1e8;
-    border: 2px solid #806f60;
+    background: #ebeae6;
+    border: 2px solid #006D68;
 }
 .separation_line{
     height: 4px;
     margin: 10px 0 10px 20px;
     width: 83%;
-    background-color: #f5f1e8;
+    background-color: #ebeae6;
 }
 .a_section{
     text-decoration: none;
@@ -188,7 +196,7 @@ h2{
     left: 0;
     background-color: #bcb1a3;
     text-align: center;
-    border: 2px solid #584125;
+    border: 2px solid #000000;
     background-size: cover;
 }
 .sectionWanderung{
@@ -227,11 +235,13 @@ h2{
     top: 50%;
     left: 5%;
     font-size: 18pt;
-    color: #584125;
+    color: #000000;
     min-width: 160px;
     margin: 0;
     padding: 10px 0;
     background-color: #FFCC00;
+    font-family: Frutiger;
+    font-weight: bold;
 }
 table{
     border-collapse: collapse;
@@ -241,25 +251,25 @@ table{
     width: 85%;
     margin: 20px;
     font-size: 12pt;
-    color: #584125;
+    color: #000000;
 }
 td, th {
-    border: 2px solid #ebe4d1;
+    border: 2px solid #ebeae6;
     text-align: left;
     font-weight: 500;
     padding: 10px;
 }
 
 tr:nth-child(even){
-    background-color: #bcb1a3;
+    background-color: #cccccc;
 }
 .forms_textarea{
     height: 100px;
     width: 80%;
     margin: 0 0 10px 20px;
     font-size: 12pt;
-    background: #f5f1e8;
-    border: 2px solid #806f60;
+    background: #ebeae6;
+    border: 2px solid #006D68;
     resize: none;
     font-family: Frutiger;
 }
@@ -269,22 +279,22 @@ tr:nth-child(even){
     width: 80%;
     font-size: 9pt;
     border-radius: 3px;
-    border: 2px solid #806f60;
+    border: 2px solid #006D68;
 }
 .button_weiter{
     float: right;
-    margin: 20px calc(100% - 80% - 20px) 0 0;
+    margin: 20px calc(100% - 80% - 20px) 50px 0;
     height: 30px;
     width: 90px;
     font-size: 9pt;
     border-radius: 5px;
-    background-color: #584125;
-    color: #ebe4d1; 
-    border: 1px solid #584125;
+    background-color: #006D68;
+    color: #ebeae6; 
+    border: 1px solid #006D68;
 }
 .button_weiter:hover{
-    background-color: #FFCC00;
-    color: #584125; 
+    background-color: #ebeae6;
+    color: #006D68; 
 }
 .button_zurück{
     margin: 20px;
@@ -292,19 +302,19 @@ tr:nth-child(even){
     width: 90px;
     font-size: 9pt;
     border-radius: 5px;
-    background-color: #ebe4d1;
-    color: #584125; 
-    border: 1px solid #584125;
+    background-color: #ebeae6;
+    color: #006D68;
+    border: 1px solid #006D68;
     cursor: pointer;
 }
 .button_zurück:hover{
-    background-color: #584125;
-    color: #ebe4d1;
+    background-color: #006D68;
+    color: #ebeae6;
 }
 .button_steckbrief{
     height: 130px;
-    border-bottom: 1px solid #ebe4d1;
-    border-top: 1px solid #ebe4d1;
+    border-bottom: 1px solid #ebeae6;
+    border-top: 1px solid #ebeae6;
     border-right: none;
     background-color: white;
     border-radius: 0;
@@ -317,8 +327,8 @@ tr:nth-child(even){
 
 .button_wochenplan_view{
     height: 130px;
-    border-bottom: 1px solid #ebe4d1;
-    border-top: 1px solid #ebe4d1;
+    border-bottom: 1px solid #ebeae6;
+    border-top: 1px solid #ebeae6;
     border-right: none;
     background-color: white;
     border-radius: 0;
@@ -329,13 +339,13 @@ tr:nth-child(even){
 }
 
 .button_steckbrief:hover, .button_wochenplan_steckbrief:hover{
-    background-color: #ebe4d1;
+    background-color: #ebeae6;
 }
 
 .button_wochenplan_steckbrief{
     height: 65px;
-    border-bottom: 1px solid #ebe4d1;
-    border-top: 1px solid #ebe4d1;
+    border-bottom: 1px solid #ebeae6;
+    border-top: 1px solid #ebeae6;
     border-right: none;
     background-color: white;
     border-radius: 0;
@@ -386,7 +396,6 @@ tr:nth-child(even){
 .div_wochenplan_view_teilnehmer{
     margin: 5px 0 0 20px;
     height: 55px;
-    width: 100%;
 }
 .img_wochenplan_view{
     height: 50px;
@@ -420,13 +429,13 @@ tr:nth-child(even){
     width: 150px;
     font-size: 9pt;
     border-radius: 5px;
-    background-color: #ebe4d1;
-    color: #584125; 
-    border: 1px solid #584125;
+    background-color: #ebeae6;
+    color: #006D68; 
+    border: 1px solid #006D68;
 }
 .button_hinzufügen:hover{
-    background-color: #584125;
-    color: #ebe4d1;
+    background-color: #006D68;
+    color: #ebeae6;
 }
 .p_kategorien{
     width: 100px;
@@ -460,30 +469,30 @@ tr:nth-child(even){
     width: 30%;
     font-size: 9pt;
     border-radius: 5px;
-    background-color: #ebe4d1;
-    color: #584125; 
-    border: 1px solid #584125;
+    background-color: #ebeae6;
+    color: #006D68; 
+    border: 1px solid #006D68;
     float: right;
 }
 .button_löschen:hover{
     background-color: red;
-    color: #584125; 
+    color: #006D68; 
 }
 .forms_login_löschen{
     height: 30px;
     width: 50%;
     margin: 0 0 10px 20px;
     font-size: 12pt;
-    background: #f5f1e8;
-    border: 2px solid #806f60;
+    background: #ebeae6;
+    border: 2px solid #006D68;
 }
 .forms_textarea_löschen{
     height: 100px;
     width: 50%;
     margin: 0 0 10px 20px;
     font-size: 12pt;
-    background: #f5f1e8;
-    border: 2px solid #806f60;
+    background: #ebeae6;
+    border: 2px solid #006D68;
     resize: none;
     font-family: Frutiger;
 }
@@ -492,8 +501,9 @@ tr:nth-child(even){
     width: 50%;
     margin: 0 10px 10px 20px;
     font-size: 14pt;
-    background: #f5f1e8;
-    border: 2px solid #806f60;
+    background: #ebeae6;
+    border: 2px solid #006D68;
+    color: #006D68;
     font-weight: 400;
 }
 #p_steckbrief_filter{
@@ -507,13 +517,13 @@ tr:nth-child(even){
     width: 90px;
     font-size: 9pt;
     border-radius: 5px;
-    background-color: #584125;
-    color: #ebe4d1; 
-    border: 1px solid #584125;
+    background-color: #006D68;
+    color: #ebeae6; 
+    border: 1px solid #006D68;
 }
 #button_filter:hover{
     background-color: #FFCC00;
-    color: #584125; 
+    color: #006D68; 
 }
 #no_characteristics{
     width: 100%;
@@ -588,7 +598,7 @@ tr:nth-child(even){
 .nowpoint{
     height: 15px;
     width: 15px;
-    background-color: #584125;
+    background-color: #006D68;
     border-radius: 50%;
     position: absolute;
     margin-top: -7px;
@@ -597,7 +607,7 @@ tr:nth-child(even){
 .button_navigation{
     width: 100%;
     padding: 10px;
-    background: #ebe4d1;
+    background: #ebeae6;
     border: none;
     cursor: pointer;
     overflow: hidden;
@@ -618,7 +628,7 @@ tr:nth-child(even){
 
 }
 .div_navigation_overlay_content a:hover{
-    background-color: #ebe4d1;
+    background-color: #ebeae6;
 }
 .section a{
     font-weight: 400;
@@ -675,20 +685,23 @@ tr:nth-child(even){
     text-decoration: none;
     cursor: pointer;
 }
-.button_zurück_modal{
+.button_zurück_modal, .button_abbrechen_modal{
     float: left;
     margin-right: calc(90% - 180px);
     height: 30px;
     width: 90px;
     font-size: 9pt;
     border-radius: 5px;
-    background-color: #ebe4d1;
-    color: #584125; 
-    border: 1px solid #584125;
+    background-color: #ebeae6;
+    color: #006D68; 
+    border: 1px solid #006D68;
 }
-.button_zurück_modal:hover, .button_zurück_einschreiben:hover{
-    background-color: #584125;
-    color: #ebe4d1;
+.button_abbrechen_modal{
+    margin-top: 10px;
+}
+.button_zurück_modal:hover, .button_zurück_einschreiben:hover, .button_abbrechen_modal:hover{
+    background-color: #006D68;
+    color: #ebeae6;
 }
 .button_zurück_einschreiben{
     float: left;
@@ -697,9 +710,9 @@ tr:nth-child(even){
     width: 90px;
     font-size: 9pt;
     border-radius: 5px;
-    background-color: #ebe4d1;
-    color: #584125; 
-    border: 1px solid #584125;
+    background-color: #ebeae6;
+    color: #006D68; 
+    border: 1px solid #006D68;
 }
 .button_weiter_modal{
     margin-top: 10px;
@@ -707,23 +720,23 @@ tr:nth-child(even){
     width: 90px;
     font-size: 9pt;
     border-radius: 5px;
-    background-color: #584125;
-    color: #ebe4d1; 
-    border: 1px solid #584125;
+    background-color: #006D68;
+    color: #ebeae6; 
+    border: 1px solid #006D68;
 }
 .button_weiter_modal:hover{
-    background-color: #FFCC00;
-    color: #584125; 
+    background-color: #ebeae6;
+    color: #006D68; 
 }
 #p_einschreiben_voll{
-    margin: 5px 0 30px 0;
+    margin: 10px 0 30px 0;
     font-weight: 800;
-    color: #584125;
+    color: #006D68;
 }
 .div_progress { 
 	height: 30px;
 	position: relative;
-	background: rgba(128,111,96);
+	background: #006D68;
 	-moz-border-radius: 25px;
 	-webkit-border-radius: 25px;
 	border-radius: 25px;
@@ -800,8 +813,8 @@ input[type='radio'] {
     top: 50%;
     left: 5%;
     font-size: 18pt;
-    color: #584125;
-    font-weight: 600;
+    color: #000000;
+    font-weight: bold;
     min-width: 160px;
     margin: 0;
     padding: 10px 0;
@@ -810,7 +823,9 @@ input[type='radio'] {
 .p_feedback_radio{
     width: calc(90% - 50px);
     word-wrap: break-word;
-    margin: 0 0 0 40px;
+}
+.div_feedback_radio{
+    margin-bottom: 20px;
 }
 .slideshow{
     display: none;
@@ -858,20 +873,21 @@ input[type='radio'] {
     border-radius: 4px; 
     transition: border-radius .5s;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 8px;
+    right: 10px;
     margin: 0;
     padding: 0;
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     cursor: pointer;
  }
 
  #burger img {
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     position:absolute;
     left:0;
+    top: 0;
     -webkit-transition: opacity 0.25s ease-in-out;
     -moz-transition: opacity 0.25s ease-in-out;
     -o-transition: opacity 0.25s ease-in-out;

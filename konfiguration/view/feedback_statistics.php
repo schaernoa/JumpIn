@@ -1,5 +1,7 @@
 <div class="div_main">
     <?php
+        //Error Session leeren
+        $_SESSION['error'] = NULL;
         //Stack ausgeben
         echo '<p id="p_stack">'.$_SESSION['stack'].'</p>';
     ?>
@@ -20,19 +22,19 @@
                     $answercount = $answers['counted'];
                     //Anzahl berechtigter User holen
                     $allowedUsers = getNumberOfAllowedFeedbackUsers();
-                    //Durchschnittliche Antwort pro Frage
+                    //Berechnung für die Durchschnittliche Antwort pro Frage
                     $avgOptionID = getAverageOptionIDByFeedbackCategoryID($row1['id_feedbackkategorie']);
                     $roundedAvgOptionID = round($avgOptionID);
                     $avgAnswer = getAnswerByOptionID($roundedAvgOptionID);
 
-                    //Test
+                    //Berechnung der Zufriedenheit in Prozent
                     $min = getLowestIDOfOptionIDByFeedbackCategoryID($row1['id_feedbackkategorie']);
                     $max = getHighestIDOfOptionIDByFeedbackCategoryID($row1['id_feedbackkategorie']);
                     $value = $max-$min+1;
                     $avgInPercent = (100/$value)*($max-$avgOptionID+1);
                     $roundedAvgInPercent = round($avgInPercent,1);
 
-                    //Die Frage ausgeben
+                    //Die Frage, Durchschnittliche Antwort und Zufriedenheit (in Prozent) ausgeben 
                     echo '
                         <div class="div_feedback_statistik_frage">
                             <p class="p_feedback_statistik_frage">'.$row1['frage'].' ('.$answercount.'/'.$allowedUsers.')</p>

@@ -11,7 +11,7 @@
         $aktivitaet = $_SESSION['wochenplan_view_id'];
     }
     //Wenn die AktivitätID nicht leer ist und kein Aktivitätsname mitgegeben wurde (Normale Activity, kein Activityblock oder Platzhalter)
-    if(!empty($aktivitaet) & empty($_POST['name'])){
+    if(empty($_POST['name'])){
         $activity = getActivityByID($aktivitaet);
         echo '
             <h2>'.$activity['aktivitaetsname'].'</h2>
@@ -80,7 +80,7 @@
         ';
     }
     //Wenn die AktivitätID nicht leer ist und der Aktivitätsname mitgegeben wurde (Platzhalter für nicht eingeschriebene Activityblocks)
-    else if(!empty($aktivitaet) & !empty($_POST['name'])){
+    else {
         $blockname = $_POST['name'];
         echo '
             <h2>Aktivitäten</h2>
@@ -94,7 +94,8 @@
                         echo 'Du kannst dich nicht mehr einschreiben! Die Aktivitäten haben bereits begonnen.';
                         break;
                     case 4:
-                        echo 'Du kannst dich erst ab '.getEinschreibezeitOfActivityBlockByActivityBlockname($blockname).' einschreiben.';
+                        $einschreibzeit = getEinschreibezeitOfActivityBlockByActivityBlockname($blockname);
+                        echo 'Du kannst dich erst ab dem '.getDateString($einschreibzeit).' um '.getHours($einschreibzeit).' Uhr einschreiben.';
                         break;
                 }
                 echo '</p>';
@@ -122,8 +123,5 @@
                 <input class="button_zurück" type="submit" name="submit_btn" value="Zurück"/>
             </form>
         ';
-    }
-    else{
-        header('Location: wochenplan');
     }
 ?>

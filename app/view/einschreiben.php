@@ -106,7 +106,7 @@
                 <p>
                     Du kannst dich in diesem Aktivitätsblock nur für <b>1</b> Aktivität einschreiben. Möchtest du dich trotzdem für die Aktivität <b>'.$activity['aktivitaetsname'].'</b> einschreiben?
                 </p>
-                <button id="button_abbrechen" class="button_zurück_modal">Abbrechen</button>
+                <button id="button_abbrechen" class="button_abbrechen_modal">Abbrechen</button>
                 <form action="validate_einschreiben" method="post">
                     <input type="hidden" name="aktivitaetid" value="'.$activity['id_aktivitaet'].'">
                     <input class="button_weiter_modal" type="submit" name="submit_btn" value="Einschreiben"/>
@@ -125,7 +125,7 @@
         }
         else{
             echo '
-                <p id="p_einschreiben_voll">Aktivität voll</p>
+                <span id="einschreiben_voll"><p id="p_einschreiben_voll">Aktivität voll</p></span>
             ';
         }
     }

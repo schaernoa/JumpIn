@@ -635,7 +635,7 @@
 
     function getNumberOfAllowedFeedbackUsers() {
         $db = getDatabase();
-        $sql = ("SELECT count(id_benutzer) as counted FROM BENUTZER as b join BENUTZER_GRUPPE as bg on b.id_benutzer = bg.benutzer_id JOIN GRUPPE as g on bg.gruppe_id = g.id_gruppe WHERE g.id_gruppe = (SELECT id_gruppe FROM gruppe WHERE name = 'Informatiker') or g.id_gruppe = (SELECT id_gruppe FROM gruppe WHERE name = 'Mediamatiker')");
+        $sql = ("SELECT COUNT(benutzer_id) AS counted FROM BENUTZER_GRUPPE AS bg JOIN GRUPPE AS g ON bg.gruppe_id = g.id_gruppe WHERE bg.gruppe_id = (SELECT id_gruppe FROM GRUPPE WHERE name = 'Informatiker/in') OR g.id_gruppe = (SELECT id_gruppe FROM GRUPPE WHERE name = 'Mediamatiker/in')");
         $result = $db->query($sql);
         $resultarray = mysqli_fetch_assoc($result);
         $resultstring = $resultarray['counted'];

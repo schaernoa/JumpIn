@@ -35,8 +35,9 @@
             //Für jede Option der Frage Radio Buttons ausgeben
             while($row = mysqli_fetch_assoc($options)){
                 echo '
-                    <input class="forms_radio" type="radio" name="options"
-                    value="'.$row['id_optionen'].'"><p class="p_feedback_radio">'.$row['antwort'].'</p><br>
+                    <div class="div_feedback_radio">
+                        <label class="p_feedback_radio"><input class="forms_radio" type="radio" value="'.$row['id_optionen'].'" name="options">'.$row['antwort'].'</label>
+                    </div>
                 ';
             }
             //Das Bemerkungsfeld ausgeben
