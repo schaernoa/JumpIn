@@ -27,7 +27,7 @@ nav{
     height: 110px;
     font-size: 25pt;
     font-weight: 900;
-    color: #584125;
+    color: #006D68;
 }
 .span_headertitle{
     position: absolute;
@@ -37,15 +37,11 @@ nav{
     margin: 30px 20px 0 0;
 }
 #a_headertitle{
-    border-left: 2px solid #584125;
+    border-left: 2px solid #000000;
     text-decoration: none;
     font-size: 25pt;
     font-weight: 900;
-    color: #584125;
-}
-#a_headertitle:hover{
     color: #000000;
-    border-left: 2px solid #000000;
 }
 .p_headertitle{
     margin: 10% 20px 0 0;
@@ -53,7 +49,7 @@ nav{
 .p_content{
     font-size: 20pt;
     margin-left: 20px;
-    color: #584125;
+    color: #006D68;
 }
 #img_login{
     position: absolute;
@@ -73,7 +69,7 @@ nav{
     margin: 0;
     font-size: 22pt;
     font-weight: 900;
-    color: #584125;
+    color: #000000;
     text-align: left;
 }
 .forms_login{
@@ -81,8 +77,8 @@ nav{
     width: 700px;
     margin-bottom: 10px;
     font-size: 18pt;
-    background: #f5f1e8;
-    border: 2px solid #806f60;
+    background: #ebeae6;
+    border: 2px solid #006D68;
 }
 #button_login{
     float: right;
@@ -90,20 +86,20 @@ nav{
     width: 130px;
     font-size: 16pt;
     border-radius: 5px;
-    background-color: #584125;
-    color: #ebe4d1; 
-    border: 1px solid #584125;
+    background-color: #006D68;
+    color: #ebeae6; 
+    border: 1px solid #006D68;
 }
 #button_login:hover{
     background-color: #FFCC00;
-    color: #584125; 
+    color: #006D68; 
 }
 
 .div_main{
     overflow: auto;
     width: 85%;
     margin: 50px 7.5%;
-    background-color: #ebe4d1;
+    background-color: #cce2e1;
 }
 .div_flex{
     margin: 2% 4%;
@@ -119,14 +115,14 @@ nav{
     margin: 20px 20px;
     font-size: 30pt;
     font-weight: 900;
-    color: #584125;
+    color: #000000;
 }
 .einstellungsbox{
     width: 240px;
     height: 240px;
     background-color: white;
     margin: 25px;
-    border: 1px solid #584125;
+    border: 1px solid #000000;
     text-align: center;
 }
 .img_einstellungsbox{
@@ -140,7 +136,7 @@ nav{
     margin: 5px 0;
     font-size: 20pt;
     font-weight: 900;
-    color: #584125;
+    color: #000000;
     text-decoration: none;
 }
 .btn_einstellungsbox{
@@ -148,7 +144,7 @@ nav{
     height: 240px;
     background-color: white;
     margin: 25px;
-    border: 1px solid #584125;
+    border: 1px solid #006D68;
     text-align: center;
     cursor: pointer;
 }
@@ -157,7 +153,7 @@ nav{
     margin: 5px 0;
     font-size: 25pt;
     font-weight: 900;
-    color: #584125;
+    color: #000000;
     text-decoration: none;
 }
 .div_form{
@@ -170,19 +166,19 @@ nav{
     font-size: 35pt;
     font-weight: 900;
     margin-top: 35px;
-    color: #584125;
+    color: #000000;
 }
 .p_form{
     margin: 20px 0 0 20px;
     font-size: 25pt;
     font-weight: 900;
-    color: #584125;
+    color: #000000;
 }
 
 .p_form_username{
     margin: 20px 0 0 20px;
     font-weight: 900;
-    color: #584125;
+    color: #000000;
     font-style:italic;
     font-size:12pt;
 }
@@ -194,24 +190,24 @@ nav{
     height: 40px;
     width: 500px;
     font-size: 18pt;
-    background: #f5f1e8;
-    border: 2px solid #806f60;
+    background: #ebeae6;
+    border: 2px solid #006D68;
 }
 .forms_dropdown{
     margin-left: 20px;
     height: 40px;
     width: 508px;
     font-size: 18pt;
-    background: #f5f1e8;
-    border: 2px solid #806f60;
+    background: #ebeae6;
+    border: 2px solid #006D68;
 }
 .forms_textarea{
     margin-left: 20px;
     height: 200px;
     width: 500px;
     font-size: 18pt;
-    background: #f5f1e8;
-    border: 2px solid #806f60;
+    background: #ebeae6;
+    border: 2px solid #006D68;
     resize: none;
     font-family: Frutiger;
 }
@@ -223,16 +219,16 @@ nav{
     height: 40px;
     width: 250px;
     font-size: 18pt;
-    background: #f5f1e8;
-    border: 2px solid #806f60;
+    background: #ebeae6;
+    border: 2px solid #006D68;
     font-family: Frutiger;
 }
 .forms_time{
     height: 40px;
     width: 250px;
     font-size: 18pt;
-    background: #f5f1e8;
-    border: 2px solid #806f60;
+    background: #ebeae6;
+    border: 2px solid #006D68;
     font-family: Frutiger;
 }
 label{
@@ -247,13 +243,13 @@ label{
     width: 130px;
     font-size: 18pt;
     border-radius: 5px;
-    background-color: #584125;
-    color: #ebe4d1; 
-    border: 1px solid #584125;
+    background-color: #006D68;
+    color: #ebeae6; 
+    border: 1px solid #006D68;
 }
 .button_weiter:hover{
-    background-color: #FFCC00;
-    color: #584125; 
+    background-color: #ebeae6;
+    color: #006D68; 
 }
 .button_weiter:disabled{
     opacity: 0.6;
@@ -263,13 +259,13 @@ label{
     width: 130px;
     font-size: 18pt;
     border-radius: 5px;
-    background-color: #584125;
-    color: #ebe4d1; 
-    border: 1px solid #584125;
+    background-color: #006D68;
+    color: #ebeae6; 
+    border: 1px solid #006D68;
 }
 .button_weiter_table:hover{
     background-color: #FFCC00;
-    color: #584125; 
+    color: #006D68; 
 }
 .button_weiter_table:disabled{
     opacity: 0.6;
@@ -279,13 +275,13 @@ label{
     width: 130px;
     font-size: 18pt;
     border-radius: 5px;
-    background-color: #ebe4d1;
-    color: #584125; 
-    border: 1px solid #584125;
+    background-color: #ebeae6;
+    color: #006D68; 
+    border: 1px solid #006D68;
 }
 .button_delete:hover{
     background-color: red;
-    color: #584125; 
+    color: #000000; 
 }
 .button_delete:disabled{
     opacity: 0.6;
@@ -297,13 +293,17 @@ label{
     width: 130px;
     font-size: 18pt;
     border-radius: 5px;
-    background-color: #ebe4d1;
-    color: #584125; 
-    border: 1px solid #584125;
+    background-color: #006D68;
+    color: #ebeae6; 
+    border: 1px solid #006D68;
 }
-.button_zurück:hover, .button_zurück_choice:hover{
-    background-color: #584125;
-    color: #ebe4d1;
+.button_zurück:hover{
+    background-color: #ebeae6;
+    color: #006D68;
+}
+.button_zurück_choice:hover{
+    background-color: #ebeae6;
+    color: #006D68;
 }
 .button_zurück_stack{
     float: left;
@@ -312,13 +312,13 @@ label{
     width: 130px;
     font-size: 18pt;
     border-radius: 5px;
-    background-color: #584125;
-    color: #ebe4d1; 
-    border: 1px solid #584125;
+    background-color: #006D68;
+    color: #ebeae6; 
+    border: 1px solid #006D68;
 }
 .button_zurück_stack:hover{
-    background-color: #FFCC00;
-    color: #584125; 
+    background-color: #ebeae6;
+    color: #006D68; 
 }
 .button_weiter_import{
     float: left;
@@ -327,13 +327,13 @@ label{
     width: 130px;
     font-size: 18pt;
     border-radius: 5px;
-    background-color: #584125;
-    color: #ebe4d1; 
-    border: 1px solid #584125;
+    background-color: #006D68;
+    color: #ebeae6; 
+    border: 1px solid #006D68;
 }
 .button_weiter_import:hover{
-    background-color: #FFCC00;
-    color: #584125; 
+    background-color: #ebeae6;
+    color: #006D68; 
 }
 .button_zurück_choice{
     margin: 20px;
@@ -341,30 +341,30 @@ label{
     width: 130px;
     font-size: 18pt;
     border-radius: 5px;
-    background-color: #ebe4d1;
-    color: #584125; 
-    border: 1px solid #584125;
+    background-color: #006D68;
+    color: #ebeae6; 
+    border: 1px solid #006D68;
 }
 .button_file_download{
     margin: 20px;
     height: 40px;
     font-size: 18pt;
     border-radius: 5px;
-    border: 1px solid #ebe4d1;
+    border: 1px solid #ebeae6;
     width:auto;
-    color:#ebe4d1;
-    background-color:#584125;
+    color:#ebeae6;
+    background-color:#006D68;
 }
 .button_file_download:hover{
-    background-color: #ebe4d1;
-    color: #584125;
+    background-color: #ebeae6;
+    color: #006D68;
     cursor: pointer;
 }
 .div_forms_checkbox{
     margin: 20px 0 0 20px;
     font-size: 25pt;
     font-weight: 900;
-    color: #584125;
+    color: #000000;
 }
 .forms_checkbox{
     margin-left: 20px;
@@ -384,7 +384,7 @@ table{
     width: 95%;
     margin: 20px;
     font-size: 18pt;
-    color: #584125;
+    color: #006D68;
 }
 td, th {
     border: 1px solid #dddddd;
@@ -454,8 +454,8 @@ td, th {
     width: 300px;
     font-size: 18pt;
     border-radius: 5px;
-    background: #f5f1e8;
-    border: 2px solid #806f60;
+    background: #ebeae6;
+    border: 2px solid #006D68;
 }
 .autocomplete-items {
     font-family: Frutiger;
@@ -490,9 +490,9 @@ td, th {
     height: 40px;
     font-size: 18pt;
     border-radius: 5px;
-    background-color: #584125;
-    color: #ebe4d1; 
-    border: 1px solid #584125;
+    background-color: #006D68;
+    color: #ebeae6; 
+    border: 1px solid #006D68;
 }
 
 .button_search{
@@ -572,13 +572,13 @@ td, th {
     width: 130px;
     font-size: 18pt;
     border-radius: 5px;
-    background-color: #ebe4d1;
-    color: #584125; 
-    border: 1px solid #584125;
+    background-color: #ebeae6;
+    color: #006D68; 
+    border: 1px solid #006D68;
 }
 .button_zurück_modal:hover, .button_zurück_einschreiben:hover{
-    background-color: #584125;
-    color: #ebe4d1;
+    background-color: #006D68;
+    color: #ebeae6;
 }
 
 
