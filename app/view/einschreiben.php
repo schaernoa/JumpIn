@@ -120,7 +120,7 @@
             <input class="button_zurück_einschreiben" type="submit" name="submit_btn" value="Zurück"/>
         </form>
         ';
-        //Wenn der aktuelle User kein Coach ist
+        //Wenn der aktuelle User kein Coach ist (1 bedeutet Coach --> validate_login Session)
         if($_SESSION['Coach'] != 1){
             //Wenn es noch freie Plätze in der Aktivität hat
             if($anzahlteilnehmer < $maxteilnehmer){

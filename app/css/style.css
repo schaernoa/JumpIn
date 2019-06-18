@@ -284,9 +284,9 @@ tr:nth-child(even){
 .button_weiter{
     float: right;
     margin: 20px calc(100% - 80% - 20px) 20px 0;
-    height: 30px;
-    width: 90px;
-    font-size: 9pt;
+    height: 35px;
+    width: 100px;
+    font-size: 10pt;
     border-radius: 5px;
     background-color: #006D68;
     color: #ebeae6; 
@@ -298,9 +298,9 @@ tr:nth-child(even){
 }
 .button_zurück{
     margin: 20px;
-    height: 30px;
-    width: 90px;
-    font-size: 9pt;
+    height: 35px;
+    width: 100px;
+    font-size: 10pt;
     border-radius: 5px;
     background-color: #ebeae6;
     color: #006D68;
@@ -425,9 +425,9 @@ tr:nth-child(even){
 }
 .button_hinzufügen{
     margin: 0 calc(100% - 210px) 20px 20px;
-    height: 30px;
+    height: 35px;
     width: 150px;
-    font-size: 9pt;
+    font-size: 10pt;
     border-radius: 5px;
     background-color: #ebeae6;
     color: #006D68; 
@@ -522,7 +522,7 @@ tr:nth-child(even){
     border: 1px solid #006D68;
 }
 #button_filter:hover{
-    background-color: #FFCC00;
+    background-color: #ebeae6;
     color: #006D68; 
 }
 #no_characteristics{
@@ -688,9 +688,9 @@ tr:nth-child(even){
 .button_zurück_modal, .button_abbrechen_modal{
     float: left;
     margin-right: calc(90% - 180px);
-    height: 30px;
-    width: 90px;
-    font-size: 9pt;
+    height: 35px;
+    width: 100px;
+    font-size: 10pt;
     border-radius: 5px;
     background-color: #ebeae6;
     color: #006D68; 
@@ -706,9 +706,9 @@ tr:nth-child(even){
 .button_zurück_einschreiben{
     float: left;
     margin: 10px calc(90% - 200px) 20px 20px;
-    height: 30px;
-    width: 90px;
-    font-size: 9pt;
+    height: 35px;
+    width: 100px;
+    font-size: 10pt;
     border-radius: 5px;
     background-color: #ebeae6;
     color: #006D68; 
@@ -716,9 +716,9 @@ tr:nth-child(even){
 }
 .button_weiter_modal{
     margin-top: 10px;
-    height: 30px;
-    width: 90px;
-    font-size: 9pt;
+    height: 35px;
+    width: 100px;
+    font-size: 10pt;
     border-radius: 5px;
     background-color: #006D68;
     color: #ebeae6; 

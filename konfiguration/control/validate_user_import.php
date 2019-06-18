@@ -30,7 +30,7 @@
                     //Damit die Umlaute richtig in die DB geschrieben werden.
                     $row = array_map("utf8_encode", $row);
                     //Attribute Auslesen und in Variable speichern
-                    $username = htmlspecialchars($row[0]);
+                    $username = htmlspecialchars(strtolower($row[0]));
                     $password = $row[1];
                     $name = htmlspecialchars($row[2]);
                     $prename = htmlspecialchars($row[3]);

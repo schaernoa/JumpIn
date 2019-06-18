@@ -15,7 +15,7 @@
             //name, vorname und benutzername specialchars validieren
             $name = htmlspecialchars($_POST['name']);
             $vorname = htmlspecialchars($_POST['vorname']);
-            $benutzername = htmlspecialchars($_POST['benutzername']);
+            $benutzername = htmlspecialchars(strtolower($_POST['benutzername']));
             //Wenn der benutzername kleiner oder gleich 30 zeichen ist
             if(strlen($benutzername) <= 30){
                 //wenn der vorname kleiner oder gleich 50 Zeichen ist
