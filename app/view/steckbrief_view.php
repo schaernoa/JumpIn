@@ -29,12 +29,15 @@
                 <p class="p_form">Bild ändern</p>
                 <div class="div_steckbrief_details_blocker">
                 ';
+                    //Profilbild anzeigen wenn eines vorhanden ist, ansonsten default Bild
                     if(file_exists('./userimages/'.$user['id_benutzer'].'.png')){
                         echo '<img class="img_steckbrief_details" src="./userimages/'.$user['id_benutzer'].'.png?t='.filemtime('./userimages/'.$user['id_benutzer'].'.png').'" alt="Profilbild"/>';
                     }
                     else{
                         echo '<img class="img_steckbrief_details" src="./image/benutzer.jpg" alt="Profilbild"/>';
                     }
+                    //FileInput für Profilbild zzgl. Vorschau, welche noch ausgeblendet ist, wenn kein File angegeben wurde
+                    // input srcimg ist sehr langer string, aus welchem ein Bild genereiert werden kann
                     echo '
                     <div>
                         <input type="file" id="fileInput" name="bild" accept=".jpg, .jpeg, .png" />
@@ -61,6 +64,7 @@
                     echo '
                         <p class="p_form">'.$row['name'].'</p>
                         <input class="forms_login" type="text" name="'.$row['id_steckbriefkategorie'].'" value="'.$answerarray['antwort'].'" form="editForm"/>
+                        <input type="hidden" name="'.$row['id_steckbriefkategorie'].'_1" value="einzeiler" form="editForm"/>
                         <input type="hidden" name="steckbrief[]" value="'.$row['id_steckbriefkategorie'].'" form="editForm"/>
                         <br>
                     ';
@@ -69,6 +73,7 @@
                     echo '
                         <p class="p_form">'.$row['name'].'</p>
                         <textarea class="forms_textarea" name="'.$row['id_steckbriefkategorie'].'" maxlength="300" form="editForm">'.$answerarray['antwort'].'</textarea>
+                        <input type="hidden" name="'.$row['id_steckbriefkategorie'].'_1" value="mehrzeiler" form="editForm"/>
                         <input type="hidden" name="steckbrief[]" value="'.$row['id_steckbriefkategorie'].'" form="editForm"/>
                         <br>
                     ';

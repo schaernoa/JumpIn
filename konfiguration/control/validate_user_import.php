@@ -29,7 +29,7 @@
                 while($row = fgetcsv($input, 1024, ';')){
                     //Damit die Umlaute richtig in die DB geschrieben werden.
                     $row = array_map("utf8_encode", $row);
-                    //Attribute Auslesen und in Variable speichern
+                    //Attribute Auslesen und in Variable speichern (ACHTUNG: Reihenfolge)
                     $username = htmlspecialchars(strtolower($row[0]));
                     $password = $row[1];
                     $name = htmlspecialchars($row[2]);

@@ -13,20 +13,25 @@
                 $y = 0;
                 foreach($_POST['steckbrief'] as $validate){
                     $x++;
+                    $valid = true;
                     if(!empty($_POST[''.$validate.''])){
                         $steckbrief = htmlspecialchars($_POST[''.$validate.'']);
                         if($validate == "3"){
-                            if(is_numeric($_POST[''.$validate.''])){
-                                if(strlen($steckbrief) <= 300){
-                                    $y++;
-                                }
+                            if(!is_numeric($_POST[''.$validate.''])){
+                                $valid = false;
+                                $kat .= "(Alter) ";
                             }
-                            else{$kat = "(Alter) ";}
                         }
-                        else{
-                            if(strlen($steckbrief) <= 300){
-                                $y++;
+                        if($_POST[''.$validate.'_1'] == "mehrzeiler"){
+                            $lines_arr = preg_split('/\n/',$steckbrief);
+                            $num_newlines = count($lines_arr); 
+                            if($num_newlines > 5){
+                                $valid = false;
+                                $kat .= "(Max. 5 Zeilen pro Feld) ";
                             }
+                        }
+                        if(strlen($steckbrief) <= 300 && $valid){
+                            $y++;
                         }
                     }
                 }

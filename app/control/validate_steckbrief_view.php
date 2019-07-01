@@ -11,21 +11,28 @@
             $x = 0;
             $y = 0;
             foreach($_POST['steckbrief'] as $validate){
+                $validation = true;
                 $x++;
                 if(!empty($_POST[''.$validate.''])){
                     $steckbrief = htmlspecialchars($_POST[''.$validate.'']);
+                    //Alter validieren --> muss Zahl sein
                     if($validate == "3"){
-                        if(is_numeric($_POST[''.$validate.''])){
-                            if(strlen($steckbrief) <= 300){
-                                $y++;
-                            }
+                        if(!is_numeric($steckbrief)){
+                            $kat .= "(Alter) ";
+                            $validation = false;
                         }
-                        else{$kat = "(Alter) ";}
                     }
-                    else{
-                        if(strlen($steckbrief) <= 300){
-                            $y++;
+                    //Mehrzeiler validieren --> Max 5 Zeilen
+                    if($_POST[''.$validate.'_1'] == "mehrzeiler"){
+                        $lines_arr = preg_split('/\n/',$steckbrief);
+                        $num_newlines = count($lines_arr); 
+                        if($num_newlines > 5){
+                            $validation = false;
                         }
+                    }
+                    //Wenn länge und Validierung ok sind
+                    if(strlen($steckbrief) <= 300 && $validation){
+                        $y++;
                     }
                 }
             }
@@ -54,7 +61,7 @@
                 }
             }
             else{
-                $_SESSION['error'] = "Nicht alle Kategorien $kat im Steckbrief wurden richtig ausgefüllt!";
+                $_SESSION['error'] = "Nicht alle Kategorien $kat im Steckbrief wurden richtig ausgefüllt! (Max. 5 Zeilen pro Feld)";
             }
         }
         //Wenn richtig validiert

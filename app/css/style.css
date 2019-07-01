@@ -445,9 +445,10 @@ tr:nth-child(even){
 }
 .p_details{
     font-size: 15pt;
-    margin: 0 calc(100% - 80% - 20px) -20px 20px;
+    margin: -20px calc(100% - 80% - 20px) -20px 20px;
     font-weight: 400;
     word-wrap:break-word;
+    white-space: pre-line;
 }
 .img_steckbrief_details_dontknow{
     position: absolute;

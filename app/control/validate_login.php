@@ -30,7 +30,6 @@
             else{
                 //Fehlermeldung in error-Session speichern
                 if(isDatabaseReachable()){
-
                     if(empty(getUserIDByUsername($benutzername))){
                         $_SESSION['error'] = "Kein Benutzer mit diesem Benutzernamen vorhanden!";
                         $_SESSION['error_login'] = null;
@@ -47,7 +46,6 @@
                     $_SESSION['error_login'] = $benutzername;
                     header('Location: login');
                 }
-                
             }
         }
         else{

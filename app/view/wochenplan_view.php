@@ -22,23 +22,23 @@
             <br>
         ';
         //Wenn die Aktivität eine Info hat
-        if($activity['info'] != NULL){
+        if($activity['info'] != NULL || !empty($activity['info'])){
             echo '
-                    <p class="p_form">Info</p>
-                    <p class="p_details">
-                        '.$activity['info'].'
-                    </p>
-                    <br>
+                <p class="p_form">Info</p>
+                <p class="p_details">
+                    '.$activity['info'].'
+                </p>
+                <br>
             ';
         }
         echo '
-                <p class="p_form">Zeit</p>
-                <p class="p_details">
-                    '.getDay($activity['startzeit']).' '.getDateString($activity['startzeit']).'
-                    <br>
-                    '.getHours($activity['startzeit']).' bis '.getHours($activity['endzeit']).'
-                </p>
-                <br>
+            <p class="p_form">Zeit</p>
+            <p class="p_details">
+                '.getDay($activity['startzeit']).' '.getDateString($activity['startzeit']).'
+            <br>
+                '.getHours($activity['startzeit']).' bis '.getHours($activity['endzeit']).'
+            </p>
+            <br>
         ';
         //Wenn die Aktivität zum einschreiben ist
         if($activity['anzahlteilnehmer'] != NULL){

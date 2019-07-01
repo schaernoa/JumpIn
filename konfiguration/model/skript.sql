@@ -176,11 +176,11 @@ INSERT INTO GRUPPE VALUES
 (NULL, "Alle", 0),
 (NULL, "Admin", 0),
 (NULL, "Coach", 3),
-(NULL, "Informatiker", 1),
-(NULL, "Mediamatiker", 1),
-(NULL, "Informatiker EFZ", 2),
-(NULL, "Informatiker PiBS", 2),
-(NULL, "Informatiker WayUp", 2),
+(NULL, "Informatiker/in", 1),
+(NULL, "Mediamatiker/in", 1),
+(NULL, "Informatiker/in EFZ", 2),
+(NULL, "Informatiker/in PiBS", 2),
+(NULL, "Informatiker/in WayUp", 2),
 (NULL, "Hilfscoach", 3);
 
 INSERT INTO BENUTZER_GRUPPE VALUES

@@ -76,7 +76,7 @@
     //1 => "9E2A2F", 2 => "716135", 4 => "F00",  5 => "C52998", 6 => "006D68", 7 => "716135", 9 => "0076A8", 10 => "00968F", 11 => "716135", 12 => "004976", 13 => "523178"
     //60% Post-Farben
     //1 => "C57F82", 2 => "AAA086", 4 => "EC8A83",  5 => "DC7FC3", 6 => "66A7A4", 7 => "AAA086", 9 => "66ADCB", 10 => "66C0BC", 11 => "AAA086", 12 => "6692AD", 13 => "9783AE"
-    $colors = array(1 => "B15559", 2 => "8D815D", 4 => "E6635A",  5 => "D154AF", 6 => "338A86", 7 => "8D815D", 9 => "3391B9", 10 => "33ABA5", 11 => "8D815D", 12 => "336D91", 13 => "755A93");
+    $colors = array(1 => "B15559", 2 => "8D815D", 3 => "E6635A",  4 => "D154AF", 5 => "338A86", 6 => "8D815D", 7 => "3391B9", 8 => "33ABA5", 9 => "8D815D", 10 => "336D91", 11 => "755A93");
     $nowline = false;
     $daylistcolumns = array();
     $daylisttime = array();
@@ -497,7 +497,7 @@
             //Die Aktivität nach rechts verlängern
             $widthnumber++;
         }
-        $width = "width: calc(((100%) * (".$widthnumber." / ".$allcolumns.")) - 25px);";
+        $width = "width: calc(((100%) * (".$widthnumber." / ".$allcolumns.")) - 15px);";
         $activity->setWidth($width);
     }
 
@@ -509,7 +509,7 @@
     function getLeft($daylistcolumns, $daylisttime, $day, $activity){
         $allcolumns = count($daylistcolumns[array_search($day, $daylisttime)]);
         $column = $activity->getColumn();
-        $left = "left: calc((100% * (".$column." / ".$allcolumns.")) + 10px);";
+        $left = "left: calc(100% * (".$column." / ".$allcolumns."));";
         $activity->setLeft($left);
     }
 
