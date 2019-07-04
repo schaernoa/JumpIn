@@ -181,6 +181,16 @@
         return $resultstring;
     }
 
+    function isUserInOneOfTwoGroups($userid, $groupname1, $groupname2){
+        $db = getDatabase();
+        $sql = ("SELECT COUNT(gruppe_id) AS counted FROM BENUTZER_GRUPPE WHERE benutzer_id = '$userid' AND (gruppe_id = (SELECT id_gruppe FROM GRUPPE WHERE name = '$groupname1') OR gruppe_id = (SELECT id_gruppe FROM GRUPPE WHERE name = '$groupname2'))");
+        $result = $db->query($sql);
+        $resultarray = mysqli_fetch_assoc($result);
+        $resultstring = $resultarray['counted'];
+        $db->close();
+        return $resultstring;
+    }    
+
     function getArtnameByArtname($artname){
         $db = getDatabase();
         $sql = ("SELECT name FROM ART WHERE name = '$artname' LIMIT 1");

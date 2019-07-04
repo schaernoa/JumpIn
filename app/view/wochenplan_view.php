@@ -34,9 +34,7 @@
         echo '
             <p class="p_form">Zeit</p>
             <p class="p_details">
-                '.getDay($activity['startzeit']).' '.getDateString($activity['startzeit']).'
-            <br>
-                '.getHours($activity['startzeit']).' bis '.getHours($activity['endzeit']).'
+                '.getDay($activity['startzeit']).' '.getDateString($activity['startzeit'])."\n".getHours($activity['startzeit']).' bis '.getHours($activity['endzeit']).'
             </p>
             <br>
         ';
