@@ -145,7 +145,8 @@
         $db = getDatabase();
         $sql = ("SELECT b.id_benutzer AS id_benutzer, b.benutzername AS benutzername, b.name AS name, b.vorname AS vorname FROM BENUTZER AS b
             JOIN BENUTZER_GRUPPE AS bg ON bg.benutzer_id=b.id_benutzer
-            WHERE bg.gruppe_id = '$id'");
+            WHERE bg.gruppe_id = '$id'
+            ORDER BY b.name");
         $result = $db->query($sql);
         $db->close();
         return $result;
